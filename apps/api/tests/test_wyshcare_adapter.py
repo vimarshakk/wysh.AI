@@ -24,7 +24,11 @@ def _request() -> WyshCareAIBridgeRequest:
                 "recorded_at": "2026-10-24T00:00:00Z",
                 "content_sha256": "a" * 64,
             }],
-            "requested_model": {"provider": "medgemma", "model_id": "medgemma:latest", "model_version": "synthetic"},
+            "requested_model": {
+                "provider": "medgemma",
+                "model_id": "medgemma:latest",
+                "model_version": "synthetic",
+            },
             "requested_rule_version": "diabetes-r1",
             "terminology_version": "synthetic-terminology-v1",
             "review_required": True,
@@ -39,13 +43,22 @@ def test_adapter_consumes_typed_abstention_and_preserves_identity():
 
     def transport(*, headers, json):
         captured.update({"headers": headers, "json": json})
-        return server.post("/v1/integration/wyshcare/clinical-draft", headers=dict(headers), json=dict(json))
+        return server.post(
+            "/v1/integration/wyshcare/clinical-draft",
+            headers=dict(headers),
+            json=dict(json),
+        )
 
-    result = WyshCareBridgeClient(transport).request_clinical_draft(_request(), idempotency_key="adapter-idem-1")
+    result = WyshCareBridgeClient(transport).request_clinical_draft(
+        _request(), idempotency_key="adapter-idem-1"
+    )
     assert result.status == "ABSTAINED"
     assert result.review_required is True
     assert result.clinical_use_authorized is False
-    assert captured["headers"] == {"Idempotency-Key": "adapter-idem-1", "X-Correlation-Id": "adapter-correlation-1"}
+    assert captured["headers"] == {
+        "Idempotency-Key": "adapter-idem-1",
+        "X-Correlation-Id": "adapter-correlation-1",
+    }
 
 
 def test_adapter_reuses_request_identity_for_deterministic_replay():
@@ -55,7 +68,11 @@ def test_adapter_reuses_request_identity_for_deterministic_replay():
     def transport(*, headers, json):
         nonlocal calls
         calls += 1
-        return server.post("/v1/integration/wyshcare/clinical-draft", headers=dict(headers), json=dict(json))
+        return server.post(
+            "/v1/integration/wyshcare/clinical-draft",
+            headers=dict(headers),
+            json=dict(json),
+        )
 
     adapter = WyshCareBridgeClient(transport)
     first = adapter.request_clinical_draft(_request())
@@ -83,12 +100,22 @@ def test_adapter_rejects_non_success_or_authorizing_response():
                 "clinical_use_authorized": True,
             }
 
-    with pytest.raises(WyshCareBridgeError, match="typed validation"):
-        WyshCareBridgeClient(lambda **_: Response()).request_clinical_draft(_request())
+    with pytest.raises(
+        WyshCareBridgeError,
+        match="typed validation",
+    ):
+        WyshCareBridgeClient(lambda **_: Response()).request_clinical_draft(
+            _request()
+        )
 
 
 def test_adapter_rejects_non_synthetic_request_before_transport():
     request = _request()
     object.__setattr__(request, "synthetic", False)
-    with pytest.raises(WyshCareBridgeError, match="synthetic requests only"):
-        WyshCareBridgeClient(lambda **_: pytest.fail("transport must not be called")).request_clinical_draft(request)
+    with pytest.raises(
+        WyshCareBridgeError,
+        match="synthetic requests only",
+    ):
+        WyshCareBridgeClient(
+            lambda **_: pytest.fail("transport must not be called")
+        ).request_clinical_draft(request)
