@@ -1,0 +1,14 @@
+{
+  "name": "wysh-ai-cql-runtime",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "license": "UNLICENSED",
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "cql-execution": "3.3.2",
+    "cql-exec-fhir": "2.2.0"
+  }
+}
