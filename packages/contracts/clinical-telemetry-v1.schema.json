@@ -1,0 +1,131 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Clinical Telemetry v1",
+  "description": "De-identified structured clinical telemetry input for the System One decision model. Synthetic-only; no PHI identifiers permitted.",
+  "type": "object",
+  "required": ["tenant_id", "patient_id", "language", "encounter", "vitals", "conditions", "medications", "questions"],
+  "properties": {
+    "tenant_id": {
+      "type": "string",
+      "pattern": "^synthetic-",
+      "description": "Synthetic tenant identifier"
+    },
+    "patient_id": {
+      "type": "string",
+      "pattern": "^synthetic-",
+      "description": "Synthetic patient identifier"
+    },
+    "encounter_id": {
+      "type": "string",
+      "description": "Synthetic encounter identifier"
+    },
+    "language": {
+      "type": "string",
+      "enum": ["en", "hi", "te", "ta", "bn", "mr", "es", "zh", "ar", "fr"],
+      "description": "ISO-639-1 language code of the source telemetry"
+    },
+    "recorded_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "UTC timestamp of telemetry capture"
+    },
+    "encounter": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {"type": "string", "enum": ["outpatient", "inpatient", "emergency", "icu", "telehealth"]},
+        "setting": {"type": "string"},
+        "department": {"type": "string"}
+      }
+    },
+    "vitals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["metric", "value", "unit", "recorded_at"],
+        "properties": {
+          "metric": {
+            "type": "string",
+            "enum": [
+              "hba1c_percent", "mean_glucose_mg_dl", "bp_systolic_mmhg",
+              "bp_diastolic_mmhg", "egfr_ml_min_1_73m2", "urine_acr_mg_g",
+              "age_years", "heart_rate_bpm", "temperature_c", "spo2_percent",
+              "respiratory_rate", "weight_kg", "height_cm", "bmi"
+            ]
+          },
+          "value": {"type": "number", "minimum": 0, "maximum": 1e6},
+          "unit": {"type": "string"},
+          "recorded_at": {"type": "string", "format": "date-time"},
+          "source_id": {"type": "string"}
+        }
+      },
+      "maxItems": 500
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "status", "recorded_at"],
+        "properties": {
+          "code": {"type": "string", "description": "ICD-10 / SNOMED-CT code"},
+          "code_system": {"type": "string", "enum": ["icd10", "snomed", "rxnorm", "loinc"]},
+          "status": {"type": "string", "enum": ["active", "resolved", "inactive", "unknown"]},
+          "severity": {"type": "string", "enum": ["mild", "moderate", "severe", "critical", "unknown"]},
+          "recorded_at": {"type": "string", "format": "date-time"},
+          "source_id": {"type": "string"}
+        }
+      },
+      "maxItems": 500
+    },
+    "medications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "status", "recorded_at"],
+        "properties": {
+          "code": {"type": "string", "description": "RxNorm / ATC code"},
+          "code_system": {"type": "string", "enum": ["rxnorm", "atc"]},
+          "status": {"type": "string", "enum": ["active", "resolved", "inactive", "unknown"]},
+          "dosage": {"type": "string"},
+          "recorded_at": {"type": "string", "format": "date-time"},
+          "source_id": {"type": "string"}
+        }
+      },
+      "maxItems": 500
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["question_id", "question_text", "permitted_options"],
+        "properties": {
+          "question_id": {"type": "string"},
+          "question_text": {"type": "string", "maxLength": 1000},
+          "question_type": {"type": "string", "enum": ["choice", "score", "noul"]},
+          "permitted_options": {
+            "type": "array",
+            "items": {"type": "string"},
+            "minItems": 2,
+            "maxItems": 20
+          },
+          "indication": {
+            "type": "string",
+            "enum": ["diabetes", "hypertension", "chronic_kidney_disease", "general"]
+          }
+        }
+      },
+      "maxItems": 20
+    },
+    "context": {
+      "type": "object",
+      "maxProperties": 20,
+      "description": "Bounded workflow metadata only; raw documents and PHI identifiers prohibited"
+    },
+    "synthetic": {
+      "type": "boolean",
+      "const": true,
+      "description": "Must be true; System One accepts synthetic requests only"
+    }
+  },
+  "additionalProperties": false
+}
