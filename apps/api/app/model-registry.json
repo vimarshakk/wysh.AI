@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "default_mode": "disabled",
+  "models": [
+    {"id":"deterministic-dev-stub-v0","provider":"internal","task":"synthetic_snapshot","enabled":true,"clinical_approved":false},
+    {"id":"gemini-2.5-flash","provider":"google","task":"structured_workflow_decision","enabled":false,"clinical_approved":false},
+    {"id":"medgemma:4b","provider":"self_hosted","task":"medical_text","enabled":false,"clinical_approved":false},
+    {"id":"medgemma:latest","provider":"self_hosted","task":"medical_text","enabled":true,"clinical_approved":false},
+    {"id":"medgemma-candidate","provider":"self_hosted","task":"medical_text","enabled":false,"clinical_approved":false},
+    {"id":"llama3.2:3b","provider":"self_hosted","task":"general_text","enabled":false,"clinical_approved":false},
+    {"id":"qwen2.5:7b","provider":"self_hosted","task":"structured_workflow_decision","enabled":false,"clinical_approved":false},
+    {"id":"monai-segmentation-candidate","provider":"self_hosted","task":"image_segmentation","enabled":false,"clinical_approved":false},
+    {"id":"medrax-tool-router-candidate","provider":"self_hosted","task":"cxr_tool_routing","enabled":false,"clinical_approved":false},
+    {"id":"vision-report-candidate","provider":"self_hosted","task":"image_report_draft","enabled":false,"clinical_approved":false},
+    {"id":"gemini-candidate","provider":"google","task":"multimodal_reasoning","enabled":false,"clinical_approved":false},
+    {"id":"openai-compatible-candidate","provider":"self_hosted","task":"structured_workflow_decision","enabled":false,"clinical_approved":false},
+    {"id":"decision-candidate","provider":"internal","task":"typed_decision","enabled":false,"clinical_approved":false}
+  ]
+}
