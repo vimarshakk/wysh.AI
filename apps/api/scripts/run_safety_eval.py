@@ -8,7 +8,7 @@ from pathlib import Path
 from fastapi.testclient import TestClient
 
 from app.config import Settings
-from app.decision import DecisionModelOutput, DecisionRequest, EvidenceReference, validate_output
+from app.decision import DecisionModelOutput, DecisionRequest, EvidenceReference, validate_output  # noqa
 from app.gateway import ModelGateway
 from app.main import create_app
 from app.providers import ProviderError

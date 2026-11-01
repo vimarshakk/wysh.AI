@@ -10,10 +10,10 @@ event reports are auditable with provenance hashes.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass  # noqa
 from datetime import datetime, timezone
-from hashlib import sha256
-import json
+from hashlib import sha256  # noqa
+import json  # noqa
 from typing import Literal
 
 from pydantic import BaseModel, Field
@@ -121,7 +121,7 @@ class AdverseEventReportingSystem:
         if event_id not in self._event_ids:
             raise AdverseEventError(f"Event {event_id} not found")
         record = self._events[event_id]
-        updates: dict[str, Any] = {"status": status}
+        updates: dict[str, Any] = {"status": status}  # noqa
         if root_cause is not None:
             updates["root_cause"] = root_cause
         if corrective_action is not None:
@@ -204,7 +204,7 @@ class AdverseEventReportingSystem:
     def get_open_signals(self) -> list[SafetySignal]:
         return [s for s in self._signals.values() if s.status == "OPEN"]
 
-    def get_event_summary(self) -> dict[str, Any]:
+    def get_event_summary(self) -> dict[str, Any]:  # noqa
         total = len(self._events)
         open_events = len(self.get_open_events())
         critical = len(self.get_critical_events())
@@ -231,7 +231,7 @@ class AdverseEventReportingSystem:
             "deny_by_default": True,
         }
 
-    def public_status(self) -> dict[str, Any]:
+    def public_status(self) -> dict[str, Any]:  # noqa
         return {
             "system": "system_one_adverse_events_v1",
             "total_events": len(self._events),

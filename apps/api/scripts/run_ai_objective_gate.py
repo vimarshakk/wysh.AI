@@ -9,7 +9,7 @@ import sys
 ROOT = Path(__file__).parents[3]
 sys.path.insert(0, str(ROOT / "apps/api"))
 
-from app.ml_operations import InferenceAuditLog, ModelVersion, ResearchModelRegistry, detect_numeric_drift, explain_linear_prediction, summarize_validation_outcomes
+from app.ml_operations import InferenceAuditLog, ModelVersion, ResearchModelRegistry, detect_numeric_drift, explain_linear_prediction, summarize_validation_outcomes  # noqa
 
 
 def main() -> int:

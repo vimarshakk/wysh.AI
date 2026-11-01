@@ -511,7 +511,7 @@ def test_provider_telemetry_records_adapter_retry_count(monkeypatch):
         calls["count"] += 1
         if calls["count"] == 1:
             raise ProviderError("http", "timeout", "synthetic timeout")
-        return 200, {"candidates": [{"content": {"parts": [{"text": '{"selected_option":"routine","rationale":"Synthetic response.","abstained":false}' }]}}]}
+        return 200, {"candidates": [{"content": {"parts": [{"text": '{"selected_option":"routine","rationale":"Synthetic response.","abstained":false}' }]}}]}  # noqa
 
     monkeypatch.setattr("app.providers._json_request", flaky_request)
     output, telemetry = GeminiProvider(Settings(gemini_api_key="synthetic-only", provider_max_retries=1)).infer("synthetic", DecisionModelOutput)

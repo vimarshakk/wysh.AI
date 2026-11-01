@@ -57,11 +57,11 @@ def test_abdm_compatible_exchange_requires_granted_matching_synthetic_patient():
 
 
 def test_endpoint_rejects_cross_tenant_token_before_workbench_assembly():
-    from app.workbench import WorkbenchRequest
+    from app.workbench import WorkbenchRequest  # noqa
     token = make_test_token("r11-secret", issuer="wyshcare", audience="wysh-ai", tenant_id="other-tenant", patient_ids=["synthetic-other"], scopes=["clinical-workbench:read"], roles=["clinician"], purpose_of_use="synthetic-evaluation", consent_id="consent-1")
     app = create_app(Settings(service_token_secret="r11-secret"))
     client = TestClient(app)
-    payload = {"tenant_id": "synthetic-tenant", "patient_id": "synthetic-patient", "access": {"purpose_of_use": "synthetic-evaluation", "consent_id": "consent-1"}, "clinical": {"workflow_id": "w", "disease_id": "diabetes", "status": "ABSTAINED", "stages": [], "terminology": [], "calculations": None, "cql_native": None, "cql_upstream": None, "explanation": None, "safety": {"status": "ABSTAINED", "findings": [], "checked_evidence_refs": []}, "provenance_hash": "c" * 64}, "imaging": {"envelope_id": "e", "tenant_id": "synthetic-tenant", "patient_id": "synthetic-patient", "clinical_workflow_id": "w", "clinical_status": "ABSTAINED", "imaging": {"modality": "DX", "status": "ABSTAINED", "findings": [], "evidence_refs": [], "source_hash": "a" * 64, "model_id": "unconfigured", "model_version": "unavailable", "uncertainty": "none"}, "imaging_safety": {"status": "ABSTAINED", "reasons": [], "checks": {}}, "provenance_hash": "d" * 64}}
+    payload = {"tenant_id": "synthetic-tenant", "patient_id": "synthetic-patient", "access": {"purpose_of_use": "synthetic-evaluation", "consent_id": "consent-1"}, "clinical": {"workflow_id": "w", "disease_id": "diabetes", "status": "ABSTAINED", "stages": [], "terminology": [], "calculations": None, "cql_native": None, "cql_upstream": None, "explanation": None, "safety": {"status": "ABSTAINED", "findings": [], "checked_evidence_refs": []}, "provenance_hash": "c" * 64}, "imaging": {"envelope_id": "e", "tenant_id": "synthetic-tenant", "patient_id": "synthetic-patient", "clinical_workflow_id": "w", "clinical_status": "ABSTAINED", "imaging": {"modality": "DX", "status": "ABSTAINED", "findings": [], "evidence_refs": [], "source_hash": "a" * 64, "model_id": "unconfigured", "model_version": "unavailable", "uncertainty": "none"}, "imaging_safety": {"status": "ABSTAINED", "reasons": [], "checks": {}}, "provenance_hash": "d" * 64}}  # noqa
     assert client.post("/v1/clinical-workbench/synthetic", json=payload, headers={"Authorization": f"Bearer {token}"}).status_code == 401
 
 

@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import pytest
 
-from app.system_one.adverse_event_reporting import (
+from app.system_one.adverse_event_reporting import (  # noqa
     AdverseEventError,
     AdverseEventRecord,
     AdverseEventReportingSystem,

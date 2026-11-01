@@ -9,10 +9,10 @@ import sys
 ROOT = Path(__file__).parents[3]
 sys.path.insert(0, str(ROOT / "apps/api"))
 
-from app.audit import InMemoryAuditSink
-from app.imaging_research import FhirImagingStudyContract, ImagingAdapterResult, ImagingProvenanceRecord, SyntheticDicomMetadata, canonical_source_hash
-from app.multimodal_orchestration import MultimodalReviewService, build_multimodal_envelope, evaluate_imaging_safety
-from app.review_store import ReviewStore
+from app.audit import InMemoryAuditSink  # noqa
+from app.imaging_research import FhirImagingStudyContract, ImagingAdapterResult, ImagingProvenanceRecord, SyntheticDicomMetadata, canonical_source_hash  # noqa
+from app.multimodal_orchestration import MultimodalReviewService, build_multimodal_envelope, evaluate_imaging_safety  # noqa
+from app.review_store import ReviewStore  # noqa
 
 
 def main() -> None:
@@ -27,7 +27,7 @@ def main() -> None:
     service = MultimodalReviewService(review_store, audit)
     review = service.create_draft(envelope=abstained, actor_subject="clinician-synthetic")
     approved = service.decide(review_id=review.review_id, envelope=abstained, expected_version=1, action="approve", actor_subject="clinician-synthetic", note="synthetic draft review")
-    report = {"schema_version": "r9cde-gate-v1", "milestone": "R9C-R9E", "status": "PASS", "synthetic_only": True, "multimodal_status": {"clinical_status_preserved": abstained.clinical_status, "imaging_status": abstained.imaging.status, "abstained_imaging_findings": abstained.imaging.findings, "imaging_never_reinterpreted_as_negative": not abstained.imaging.findings}, "safety_cases": {"subject_mismatch": mismatch.model_dump(mode="json"), "corrupt_input_hash": corrupt.model_dump(mode="json"), "unconfigured_adapter": abstained.imaging.model_dump(mode="json")}, "review": {"state": approved.state, "version": approved.version, "event_count": len(audit.events), "audit_event_types": [event.event_type for event in audit.events], "provenance_bound": all(event.input_hash == abstained.provenance_hash for event in audit.events)}, "clinical_use_authorized": False, "clinical_governance": "HOLD", "clinical_validation": "NO-GO", "production": "NO-GO"}
+    report = {"schema_version": "r9cde-gate-v1", "milestone": "R9C-R9E", "status": "PASS", "synthetic_only": True, "multimodal_status": {"clinical_status_preserved": abstained.clinical_status, "imaging_status": abstained.imaging.status, "abstained_imaging_findings": abstained.imaging.findings, "imaging_never_reinterpreted_as_negative": not abstained.imaging.findings}, "safety_cases": {"subject_mismatch": mismatch.model_dump(mode="json"), "corrupt_input_hash": corrupt.model_dump(mode="json"), "unconfigured_adapter": abstained.imaging.model_dump(mode="json")}, "review": {"state": approved.state, "version": approved.version, "event_count": len(audit.events), "audit_event_types": [event.event_type for event in audit.events], "provenance_bound": all(event.input_hash == abstained.provenance_hash for event in audit.events)}, "clinical_use_authorized": False, "clinical_governance": "HOLD", "clinical_validation": "NO-GO", "production": "NO-GO"}  # noqa
     output = ROOT / "artifacts/r9-test-evidence/r9cde-gate.json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2) + "\n")

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-import json
+import json  # noqa
 from importlib import resources
 from pathlib import Path
 

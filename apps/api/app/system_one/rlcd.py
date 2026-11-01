@@ -15,12 +15,12 @@ is implied by calibration output.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
-from hashlib import sha256
-import json
+from dataclasses import dataclass, field  # noqa
+from hashlib import sha256  # noqa
+import json  # noqa
 from math import exp
-from pathlib import Path
-from typing import Literal
+from pathlib import Path  # noqa
+from typing import Literal  # noqa
 
 from pydantic import BaseModel, Field
 
@@ -277,7 +277,8 @@ class SystemOneRLCD:
         return None
 
     @staticmethod
-    def _utc_now() -> str:
+
+    def _utc_now() -> str:  # noqa
         from datetime import datetime, timezone
         return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
 

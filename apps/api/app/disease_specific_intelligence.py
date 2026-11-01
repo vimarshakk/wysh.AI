@@ -167,7 +167,7 @@ def evaluate(request: DiseaseSpecificRequest) -> DiseaseSpecificResponse:
     normalized = list(request.measurements)
     provenance_hash = _hash(request, normalized)
     if pack is None:
-        return DiseaseSpecificResponse(assessment_id=f"disease-specific-{request.disease_id}-{request.patient_id}", disease_id=request.disease_id, pack_version="none", status="ABSTAINED", findings=[DiseaseSpecificFinding(code="PACK_UNAVAILABLE", severity="ABSTAIN", message="No disease-specific pack is configured.", evidence_refs=[item.measurement_id for item in normalized])], missing_metrics=[], trends=[], derived_metrics=[], limitations=["The engine abstained because the disease-specific contract is unavailable."], provenance_hash=provenance_hash)
+        return DiseaseSpecificResponse(assessment_id=f"disease-specific-{request.disease_id}-{request.patient_id}", disease_id=request.disease_id, pack_version="none", status="ABSTAINED", findings=[DiseaseSpecificFinding(code="PACK_UNAVAILABLE", severity="ABSTAIN", message="No disease-specific pack is configured.", evidence_refs=[item.measurement_id for item in normalized])], missing_metrics=[], trends=[], derived_metrics=[], limitations=["The engine abstained because the disease-specific contract is unavailable."], provenance_hash=provenance_hash)  # noqa
     grouped: dict[str, list[LongitudinalMeasurement]] = defaultdict(list)
     for item in normalized:
         if item.metric in pack.observation_metrics:

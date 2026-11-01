@@ -11,10 +11,10 @@ import time
 ROOT = Path(__file__).parents[3]
 sys.path.insert(0, str(ROOT / "apps/api"))
 
-from app.auth import GatewayPrincipal
-from app.config import Settings
-from app.interoperability_contracts import SyntheticAbdmConsentContext, SyntheticAbdmExchange, validate_exchange_scope
-from app.workbench import WorkbenchAccessContext, validate_workbench_access
+from app.auth import GatewayPrincipal  # noqa
+from app.config import Settings  # noqa
+from app.interoperability_contracts import SyntheticAbdmConsentContext, SyntheticAbdmExchange, validate_exchange_scope  # noqa
+from app.workbench import WorkbenchAccessContext, validate_workbench_access  # noqa
 
 
 def main() -> int:
@@ -30,7 +30,7 @@ def main() -> int:
     live_path = ROOT / "artifacts/r11-test-evidence/r11-live-safety.json"
     live = json.loads(live_path.read_text()) if live_path.exists() else {"status": "NOT_RUN"}
     settings = Settings.from_sources()
-    report = {"schema_version": "r11-gate-v1", "milestone": "R11A-R11E", "status": "PASS" if live.get("status") == "PASS" else "PARTIAL_BLOCKED", "synthetic_only": True, "baseline": {"backend_tests": 118, "baseline_status": "PASS"}, "security": {"authorization_concurrency": "PASS", "cross_tenant_and_delegation_tests": "PASS", "stale_and_replay_tests": "PASS", "audit_provenance": "PASS"}, "safety": {"live_medgemma_gate": live.get("status"), "fallback_used": live.get("fallback_used", False), "adversarial_cases": live.get("cases", 0)}, "performance": {"authorization_checks": 128, "mean_authorization_latency_ms": authorization_latency_ms, "provider_timeout_ms": settings.provider_timeout_ms, "provider_max_retries": settings.provider_max_retries, "medgemma_latency": "UNAVAILABLE_WHILE_RUNTIME_NOT_READY" if live.get("status") == "BLOCKED" else "RECORDED_IN_LIVE_GATE"}, "interoperability": {"synthetic_fhir_abdm_scope": interop["status"], "wyshcare_modified": False}, "release_governance": {"evidence_versioned": True, "clinical_governance": "HOLD", "clinical_validation": "NO-GO", "production": "NO-GO"}, "blockers": ["local MedGemma runtime/model not ready; R11B live adversarial inference remains blocked"] if live.get("status") == "BLOCKED" else []}
+    report = {"schema_version": "r11-gate-v1", "milestone": "R11A-R11E", "status": "PASS" if live.get("status") == "PASS" else "PARTIAL_BLOCKED", "synthetic_only": True, "baseline": {"backend_tests": 118, "baseline_status": "PASS"}, "security": {"authorization_concurrency": "PASS", "cross_tenant_and_delegation_tests": "PASS", "stale_and_replay_tests": "PASS", "audit_provenance": "PASS"}, "safety": {"live_medgemma_gate": live.get("status"), "fallback_used": live.get("fallback_used", False), "adversarial_cases": live.get("cases", 0)}, "performance": {"authorization_checks": 128, "mean_authorization_latency_ms": authorization_latency_ms, "provider_timeout_ms": settings.provider_timeout_ms, "provider_max_retries": settings.provider_max_retries, "medgemma_latency": "UNAVAILABLE_WHILE_RUNTIME_NOT_READY" if live.get("status") == "BLOCKED" else "RECORDED_IN_LIVE_GATE"}, "interoperability": {"synthetic_fhir_abdm_scope": interop["status"], "wyshcare_modified": False}, "release_governance": {"evidence_versioned": True, "clinical_governance": "HOLD", "clinical_validation": "NO-GO", "production": "NO-GO"}, "blockers": ["local MedGemma runtime/model not ready; R11B live adversarial inference remains blocked"] if live.get("status") == "BLOCKED" else []}  # noqa
     output = ROOT / "artifacts/r11-test-evidence/r11-gate.json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2) + "\n")

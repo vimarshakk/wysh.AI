@@ -13,7 +13,7 @@ import json
 from pathlib import Path
 from typing import Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 from .disease_intelligence import LongitudinalMeasurement, MonitoringRequest
 

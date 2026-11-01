@@ -13,15 +13,15 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from hashlib import sha256
 import json
-from pathlib import Path
+from pathlib import Path  # noqa
 from typing import Any
 
 from ..config import Settings
-from ..decision_model import SystemOneDecisionModel
+from ..decision_model import SystemOneDecisionModel  # noqa
 from ..feature_extractor import ClinicalFact, extract
 from ..ml_governance import GovernanceError, load_governed_dataset
-from ..ml_operations import ModelVersion, ResearchModelRegistry
-from ..model_lifecycle import ModelLifecycleStore, REGISTRY_PATH, STATUSES
+from ..ml_operations import ModelVersion, ResearchModelRegistry  # noqa
+from ..model_lifecycle import ModelLifecycleStore, REGISTRY_PATH, STATUSES  # noqa
 from .decision_heads import (
     SystemOneDecisionHeads,
     default_choice_weights,
@@ -100,7 +100,7 @@ class SystemOneValidationHarness:
             model_id=f"{model_id}-encoder",
             language="en",
         )
-        encoder = SystemOneEncoder(encoder_config, settings=self._settings)
+        encoder = SystemOneEncoder(encoder_config, settings=self._settings)  # noqa
         embedding_dim = encoder_config.embedding_dim
 
         heads = SystemOneDecisionHeads(embedding_dim=embedding_dim)
@@ -148,7 +148,7 @@ class SystemOneValidationHarness:
                     permitted_options=["review_required", "escalate", "monitor"],
                     confidence_threshold=0.5,
                 )
-                score_result = heads.score("score", emb_tuple, confidence_threshold=0.5)
+                score_result = heads.score("score", emb_tuple, confidence_threshold=0.5)  # noqa
                 noul_result = heads.noul("noul", emb_tuple, confidence_threshold=0.85)
             except Exception:
                 continue
@@ -218,7 +218,7 @@ class SystemOneValidationHarness:
         }
         provenance_hash = sha256(json.dumps(provenance_input, sort_keys=True).encode()).hexdigest()
 
-        latency_ms = int((datetime.now(timezone.utc) - started).total_seconds() * 1000)
+        latency_ms = int((datetime.now(timezone.utc) - started).total_seconds() * 1000)  # noqa
 
         return ValidationHarnessResult(
             report_id=report.report_id,

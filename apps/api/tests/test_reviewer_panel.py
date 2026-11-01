@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import pytest
 
-from app.system_one.reviewer_panel import (
+from app.system_one.reviewer_panel import (  # noqa
     ReviewDecision,
     ReviewerIdentity,
     ReviewerRole,

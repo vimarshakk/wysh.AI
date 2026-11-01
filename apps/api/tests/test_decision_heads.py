@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import pytest
 
-from app.system_one.decision_heads import (
+from app.system_one.decision_heads import (  # noqa
     ChoiceOutput,
     HeadWeights,
     NoulOutput,

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-import json
-from pathlib import Path
+import json  # noqa
+from pathlib import Path  # noqa
 
 import pytest
 

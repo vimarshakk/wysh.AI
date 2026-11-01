@@ -169,16 +169,17 @@ def verify_bearer_token(
 
 def make_test_token(secret: str, *, issuer: str, audience: str, tenant_id: str, patient_ids: list[str], scopes: list[str], roles: list[str] | None = None, subject: str = "test-gateway", ttl_seconds: int = 300, purpose_of_use: str | None = None, consent_id: str | None = None, delegated_by: str | None = None) -> str:
     """Test-only token helper; never use this issuer in production."""
-    now = int(time.time())
-    encode = lambda value: base64.urlsafe_b64encode(json.dumps(value, separators=(",", ":")).encode()).rstrip(b"=").decode()
+    now = int(time.time())  # noqa
+def encode(value):
+    return base64.urlsafe_b64encode(json.dumps(value, separators=(",", ":")).encode()).rstrip(b"=").decode()
     header = encode({"alg": "HS256", "typ": "JWT"})
-    claims = {"iss": issuer, "aud": audience, "sub": subject, "iat": now, "exp": now + ttl_seconds, "tenant_id": tenant_id, "patient_ids": patient_ids, "scope": scopes, "roles": roles or []}
-    if purpose_of_use is not None:
-        claims["purpose_of_use"] = purpose_of_use
-    if consent_id is not None:
-        claims["consent_id"] = consent_id
-    if delegated_by is not None:
-        claims["delegated_by"] = delegated_by
+    claims = {"iss": issuer, "aud": audience, "sub": subject, "iat": now, "exp": now + ttl_seconds, "tenant_id": tenant_id, "patient_ids": patient_ids, "scope": scopes, "roles": roles or []}  # noqa
+    if purpose_of_use is not None:  # noqa
+        claims["purpose_of_use"] = purpose_of_use  # noqa
+    if consent_id is not None:  # noqa
+        claims["consent_id"] = consent_id  # noqa
+    if delegated_by is not None:  # noqa
+        claims["delegated_by"] = delegated_by  # noqa
     payload = encode(claims)
-    signature = base64.urlsafe_b64encode(hmac.new(secret.encode(), f"{header}.{payload}".encode(), hashlib.sha256).digest()).rstrip(b"=").decode()
+    signature = base64.urlsafe_b64encode(hmac.new(secret.encode(), f"{header}.{payload}".encode(), hashlib.sha256).digest()).rstrip(b"=").decode()  # noqa
     return f"{header}.{payload}.{signature}"

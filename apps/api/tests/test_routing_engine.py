@@ -6,7 +6,7 @@ detection, and abstention when no model can produce a decision.
 
 from __future__ import annotations
 
-import pytest
+import pytest  # noqa
 
 from app.decision_model import SystemOneDecisionModel
 from app.feature_extractor import ClinicalFact, extract

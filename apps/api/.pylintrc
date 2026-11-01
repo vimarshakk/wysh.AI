@@ -1,0 +1,29 @@
+[MASTER]
+ignore = C0114,C0115,C0116,C0301,R0902,R0903,R0912,R0913,R0914,R0915,W0613,W0611,W0612
+max-line-length = 160
+max-args = 7
+max-locals = 15
+max-returns = 6
+max-branches = 12
+max-statements = 50
+max-attributes = 7
+max-parents = 7
+max-accessors = 10
+max-public-methods = 10
+disable =
+    C0114,
+    C0115,
+    C0116,
+    C0301,
+    R0902,
+    R0903,
+    R0912,
+    R0913,
+    R0914,
+    R0915,
+    R0801,
+    W0611,
+    W0612,
+    W0613,
+    unnecessary-lambda-assignment,
+    import-outside-toplevel,

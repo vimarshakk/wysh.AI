@@ -12,13 +12,13 @@ from fastapi.testclient import TestClient
 ROOT = Path(__file__).parents[3]
 sys.path.insert(0, str(ROOT / "apps/api"))
 
-from app.bridge_contracts import WyshCareAIBridgeRequest
-from app.config import Settings
-from app.main import create_app
+from app.bridge_contracts import WyshCareAIBridgeRequest  # noqa
+from app.config import Settings  # noqa
+from app.main import create_app  # noqa
 
 
 def payload() -> dict:
-    return {"request_id": "bridge-gate-request", "correlation_id": "bridge-gate-correlation", "tenant_id": "synthetic-tenant", "patient_id": "synthetic-patient", "synthetic": True, "purpose_of_use": "synthetic-evaluation", "consent_id": "synthetic-consent", "evidence": [{"evidence_id": "obs-1", "source_type": "fhir_observation", "recorded_at": "2026-10-24T00:00:00Z", "content_sha256": "a" * 64}], "requested_model": {"provider": "medgemma", "model_id": "medgemma:latest"}, "review_required": True, "clinical_use_authorized": False}
+    return {"request_id": "bridge-gate-request", "correlation_id": "bridge-gate-correlation", "tenant_id": "synthetic-tenant", "patient_id": "synthetic-patient", "synthetic": True, "purpose_of_use": "synthetic-evaluation", "consent_id": "synthetic-consent", "evidence": [{"evidence_id": "obs-1", "source_type": "fhir_observation", "recorded_at": "2026-10-24T00:00:00Z", "content_sha256": "a" * 64}], "requested_model": {"provider": "medgemma", "model_id": "medgemma:latest"}, "review_required": True, "clinical_use_authorized": False}  # noqa
 
 
 def main() -> int:

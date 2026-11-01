@@ -9,7 +9,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-import pytest
+import pytest  # noqa
 
 ROOT = Path(__file__).parents[3]
 SCHEMA_PATH = ROOT / "packages" / "contracts" / "clinical-telemetry-v1.schema.json"

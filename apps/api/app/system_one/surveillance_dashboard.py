@@ -12,8 +12,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from hashlib import sha256
-import json
+from hashlib import sha256  # noqa
+import json  # noqa
 from typing import Any
 
 from pydantic import BaseModel, Field

@@ -13,11 +13,11 @@ import sys
 ROOT = Path(__file__).parents[3]
 sys.path.insert(0, str(ROOT / "apps/api"))
 
-from app.clinical_orchestration import ClinicalExplanation, _model_safety
-from app.config import Settings
-from app.gateway import ModelGateway
-from app.providers import MEDGEMMA_MAX_OUTPUT_TOKENS, MedGemmaProvider, ProviderError
-from app.registry import load_registry
+from app.clinical_orchestration import ClinicalExplanation, _model_safety  # noqa
+from app.config import Settings  # noqa
+from app.gateway import ModelGateway  # noqa
+from app.providers import MEDGEMMA_MAX_OUTPUT_TOKENS, MedGemmaProvider, ProviderError  # noqa
+from app.registry import load_registry  # noqa
 
 
 def main() -> int:

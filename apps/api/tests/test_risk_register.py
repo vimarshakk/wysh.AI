@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import pytest
 
-from app.system_one.risk_register import (
+from app.system_one.risk_register import (  # noqa
     HazardRecord,
     RiskAcceptability,
     RiskControlMeasure,
@@ -135,11 +135,11 @@ def test_list_hazards_sorted() -> None:
             hazard_description=f"hazard {i}",
             hazardous_situation=f"situation {i}",
             potential_harm=f"harm {i}",
-        harm_severity='MINOR',
-        initial_probability='VERY_UNLIKELY',
-        initial_risk_level="LOW",
-        created_at="2026-01-01T00:00:00Z", updated_at="2026-01-01T00:00:00Z",
-    )
+        harm_severity='MINOR',  # noqa
+        initial_probability='VERY_UNLIKELY',  # noqa
+        initial_risk_level="LOW",  # noqa
+        created_at="2026-01-01T00:00:00Z", updated_at="2026-01-01T00:00:00Z",  # noqa
+    )  # noqa
         register.add_hazard(hazard)
     hazards = register.list_hazards()
     assert [h.hazard_id for h in hazards] == ["HZ-001", "HZ-002", "HZ-003"]

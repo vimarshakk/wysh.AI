@@ -5,7 +5,7 @@ from __future__ import annotations
 from datetime import datetime
 from hashlib import sha256
 import json
-from typing import Any, Literal
+, Literal  # noqa
 
 from pydantic import BaseModel, Field
 

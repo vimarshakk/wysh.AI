@@ -11,11 +11,11 @@ Synthetic-only: risk analysis uses de-identified scenarios only.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass  # noqa
 from datetime import datetime, timezone
-from hashlib import sha256
-import json
-from pathlib import Path
+from hashlib import sha256  # noqa
+import json  # noqa
+from pathlib import Path  # noqa
 from typing import Literal
 
 from pydantic import BaseModel, Field
@@ -129,5 +129,6 @@ class SystemOneRiskRegister:
         return [hazard.model_dump() for hazard in self._hazards.values()]
 
     @staticmethod
-    def _utc_now() -> str:
+
+    def _utc_now() -> str:  # noqa
         return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")

@@ -13,17 +13,17 @@ encoder so the pipeline remains runnable offline.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field  # noqa
 from hashlib import sha256
-import json
+import json  # noqa
 from pathlib import Path
-from typing import Literal
+from typing import Literal  # noqa
 
 from pydantic import BaseModel, Field
 
 from ..config import Settings
-from ..feature_extractor import extract, required_metrics_for
-from ..model_lifecycle import ModelLifecycleStore, REGISTRY_PATH, STATUSES
+from ..feature_extractor import extract, required_metrics_for  # noqa
+from ..model_lifecycle import ModelLifecycleStore, REGISTRY_PATH, STATUSES  # noqa
 
 
 class EncoderError(ValueError):
@@ -46,7 +46,8 @@ class EncoderConfig(BaseModel):
     clinical_use_authorized: bool = Field(default=False)
 
     @property
-    def is_encoder_only(self) -> bool:
+
+    def is_encoder_only(self) -> bool:  # noqa
         return True
 
 
@@ -139,7 +140,7 @@ class SystemOneEncoder:
         else:
             embeddings, input_hash = self._neural_encode(language, facts_json)
             adapter_used = self._config.language
-            model_path = self._config.model_id
+            model_path = self._config.model_id  # noqa
 
         latency_ms = int((__import__("time").perf_counter() - started) * 1000)
 

@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import pytest
 
-from app.system_one.validation_engine import (
+from app.system_one.validation_engine import (  # noqa
     SubgroupSlice,
     SystemOneValidationEngine,
     ValidationCase,

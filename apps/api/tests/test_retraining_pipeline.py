@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import pytest
 
-from app.system_one.retraining_pipeline import (
+from app.system_one.retraining_pipeline import (  # noqa
     RetrainingPipeline,
     RetrainingTriggerConfig,
     RetrainingTriggerEvent,

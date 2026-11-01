@@ -6,9 +6,9 @@ Synthetic-only.
 
 from __future__ import annotations
 
-import pytest
+import pytest  # noqa
 
-from app.system_one.surveillance_dashboard import (
+from app.system_one.surveillance_dashboard import (  # noqa
     InferenceRecord,
     PerformanceSnapshot,
     SurveillanceConfig,

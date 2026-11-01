@@ -12,11 +12,11 @@ import sys
 ROOT = Path(__file__).parents[3]
 sys.path.insert(0, str(ROOT / "apps/api"))
 
-from app.clinical_orchestration import ClinicalExplanation, _model_safety
-from app.config import Settings
-from app.gateway import ModelGateway
-from app.providers import MEDGEMMA_MAX_OUTPUT_TOKENS, MedGemmaProvider, ProviderError
-from app.registry import load_registry
+from app.clinical_orchestration import ClinicalExplanation, _model_safety  # noqa
+from app.config import Settings  # noqa
+from app.gateway import ModelGateway  # noqa
+from app.providers import MEDGEMMA_MAX_OUTPUT_TOKENS, MedGemmaProvider, ProviderError  # noqa
+from app.registry import load_registry  # noqa
 
 
 def main() -> int:
@@ -50,7 +50,7 @@ def main() -> int:
         except ProviderError as exc:
             results.append({"provider_error": exc.classification})
     passed = len(results) == len(cases) and all(item.get("schema_validated") and item.get("safety_status") in {"PASS", "ABSTAINED"} for item in results)
-    evidence = {"milestone": args.milestone, "status": "PASS" if passed else "FAIL", "model_id": requested_model, "corpus_id": corpus["schema_version"], "cases": len(cases), "corpus_cases": len(corpus["cases"]), "results": results, "fallback_used": False, "synthetic_only": True, "resource_contract": {"timeout_ms": settings.provider_timeout_ms, "max_output_tokens": MEDGEMMA_MAX_OUTPUT_TOKENS, "retries": settings.provider_max_retries}, "evaluation_contract": {"schema_validity": True, "grounding_checked": True, "unsafe_language_checked": True, "abstention_checked": True, "provenance_recorded": True}}
+    evidence = {"milestone": args.milestone, "status": "PASS" if passed else "FAIL", "model_id": requested_model, "corpus_id": corpus["schema_version"], "cases": len(cases), "corpus_cases": len(corpus["cases"]), "results": results, "fallback_used": False, "synthetic_only": True, "resource_contract": {"timeout_ms": settings.provider_timeout_ms, "max_output_tokens": MEDGEMMA_MAX_OUTPUT_TOKENS, "retries": settings.provider_max_retries}, "evaluation_contract": {"schema_validity": True, "grounding_checked": True, "unsafe_language_checked": True, "abstention_checked": True, "provenance_recorded": True}}  # noqa
     output.write_text(json.dumps(evidence, indent=2) + "\n")
     print(json.dumps(evidence))
     return 0 if passed else 1

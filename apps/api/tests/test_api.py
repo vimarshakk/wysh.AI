@@ -16,7 +16,7 @@ def test_reject_unmarked_data():
 
 def test_snapshot_requires_review():
     payload = {'tenant_id':'synthetic-tenant','patient_id':'synthetic-patient','synthetic':True,
-      'facts':[{'statement':'Synthetic example only','evidence':[{'source_id':'synthetic-observation-1','source_type':'observation','recorded_at':'2026-01-01T00:00:00Z'}]}]}
+      'facts':[{'statement':'Synthetic example only','evidence':[{'source_id':'synthetic-observation-1','source_type':'observation','recorded_at':'2026-01-01T00:00:00Z'}]}]}  # noqa
     response = client.post('/v1/snapshots', json=payload)
     assert response.status_code == 200
     body = response.json()

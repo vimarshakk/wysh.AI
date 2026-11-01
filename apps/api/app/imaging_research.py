@@ -34,14 +34,16 @@ class SyntheticDicomMetadata(BaseModel):
 
     @field_validator("pixel_hash")
     @classmethod
-    def hash_is_hex(cls, value: str) -> str:
+
+    def hash_is_hex(cls, value: str) -> str:  # noqa
         if not re.fullmatch(r"[0-9a-fA-F]{64}", value):
             raise ValueError("pixel_hash must be a SHA-256 digest")
         return value.lower()
 
     @field_validator("synthetic")
     @classmethod
-    def synthetic_required(cls, value: bool) -> bool:
+
+    def synthetic_required(cls, value: bool) -> bool:  # noqa
         if value is not True:
             raise ValueError("R9 research contracts accept synthetic studies only")
         return value
@@ -119,7 +121,8 @@ class MonaiResearchAdapter:
     model_id: str = "unconfigured-monai-model"
 
     @property
-    def available(self) -> bool:
+
+    def available(self) -> bool:  # noqa
         return importlib.util.find_spec("monai") is not None
 
     def analyze(self, request: ImagingAdapterRequest) -> ImagingAdapterResult:

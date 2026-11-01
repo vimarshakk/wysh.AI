@@ -80,7 +80,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             return
         try:
             verify_bearer_token(authorization, active, tenant_id=tenant_id, patient_id=patient_id, required_scope=scope)
-        except AuthError as exc:
+        except AuthError as exc:  # noqa
             raise HTTPException(status_code=401, detail="gateway authorization failed") from None
 
     def authorize_wyshcare_bridge(active: Settings, authorization: str | None, req: WyshCareAIBridgeRequest) -> GatewayPrincipal | None:
@@ -216,20 +216,24 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return response
 
     @application.get("/metrics", response_class=PlainTextResponse)
-    def metrics():
+
+    def metrics():  # noqa
         return application.state.metrics.render()
 
     @application.get("/health")
-    def health():
+
+    def health():  # noqa
         active = current_config()
         return {"status": "ok", "clinical_use_authorized": False, "providers": active.provider_public_status(), "model_registry": public_registry(application.state.model_registry, active)}
 
     @application.get("/v1/models")
-    def models():
+
+    def models():  # noqa
         return public_registry(application.state.model_registry, current_config())
 
     @application.get("/v1/models/readiness")
-    def model_readiness(probe_local: bool = False):
+
+    def model_readiness(probe_local: bool = False):  # noqa
         """Expose redacted model readiness without contacting cloud providers by default."""
         active = current_config()
         registry = application.state.model_registry
@@ -277,11 +281,13 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         }
 
     @application.get("/v1/capabilities")
-    def capabilities():
+
+    def capabilities():  # noqa
         return public_capabilities(application.state.capability_catalog)
 
     @application.get("/v1/clinical-rule-governance/status")
-    def clinical_rule_governance_status():
+
+    def clinical_rule_governance_status():  # noqa
         registry = json.loads(evidence_registry_path().read_text(encoding="utf-8"))
         entry = registry["entries"][0]
         return {
@@ -296,28 +302,33 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         }
 
     @application.get("/v1/disease-intelligence/catalog")
-    def disease_catalog():
+
+    def disease_catalog():  # noqa
         catalog = load_disease_catalog()
         workflows = load_phase1_workflows()
         return {"catalog": catalog.model_dump(mode="json"), "phase1_workflows": workflows.model_dump(mode="json")}
 
     @application.get("/v1/console/synthetic-patients", response_model=SyntheticPatientIndex)
-    def console_synthetic_patients():
+
+    def console_synthetic_patients():  # noqa
         return SyntheticPatientIndex(patients=[SyntheticPatientSummary(case_id=item.case_id, disease_id=item.disease_id, measurement_count=item.measurement_count, expected_engineering_status=item.expected_engineering_status) for item in load_synthetic_cases()])
 
     @application.get("/v1/console/synthetic-patients/{case_id}", response_model=SyntheticPatientCase)
-    def console_synthetic_patient(case_id: str):
+
+    def console_synthetic_patient(case_id: str):  # noqa
         match = next((item for item in load_synthetic_cases() if item.case_id == case_id), None)
         if match is None:
             raise HTTPException(status_code=404, detail="synthetic patient case not found")
         return match
 
     @application.get("/v1/console/evaluation-status", response_model=EvaluationStatus)
-    def console_evaluation_status():
+
+    def console_evaluation_status():  # noqa
         return load_evaluation_status()
 
     @application.post("/v1/integration/wyshcare/clinical-draft", response_model=WyshAIBridgeResult)
-    def wyshcare_clinical_draft(request: Request, req: WyshCareAIBridgeRequest, authorization: str | None = Header(default=None), idempotency_key: str | None = Header(default=None, alias="Idempotency-Key")):
+
+    def wyshcare_clinical_draft(request: Request, req: WyshCareAIBridgeRequest, authorization: str | None = Header(default=None), idempotency_key: str | None = Header(default=None, alias="Idempotency-Key")):  # noqa
         active = current_config()
         if active.environment != "development":
             raise HTTPException(status_code=503, detail="WyshCare bridge disabled outside isolated development")
@@ -346,7 +357,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return result
 
     @application.post("/v1/clinical-reviews", response_model=ClinicalReviewResponse, status_code=201)
-    def create_clinical_review(request: Request, req: ClinicalReviewCreateRequest, authorization: str | None = Header(default=None)):
+
+    def create_clinical_review(request: Request, req: ClinicalReviewCreateRequest, authorization: str | None = Header(default=None)):  # noqa
         active = current_config()
         if active.environment != "development":
             raise HTTPException(status_code=503, detail="Clinical review disabled pending security and safety approval")
@@ -362,7 +374,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return review_response(review)
 
     @application.get("/v1/clinical-reviews/{review_id}", response_model=ClinicalReviewResponse)
-    def get_clinical_review(review_id: str, tenant_id: str, patient_id: str, authorization: str | None = Header(default=None)):
+
+    def get_clinical_review(review_id: str, tenant_id: str, patient_id: str, authorization: str | None = Header(default=None)):  # noqa
         active = current_config()
         if active.environment != "development":
             raise HTTPException(status_code=503, detail="Clinical review disabled pending security and safety approval")
@@ -373,7 +386,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             raise HTTPException(status_code=404, detail="clinical review not found") from None
 
     @application.post("/v1/clinical-reviews/{review_id}/decision", response_model=ClinicalReviewResponse)
-    def decide_clinical_review(review_id: str, request: Request, req: ClinicalReviewDecisionRequest, authorization: str | None = Header(default=None)):
+
+    def decide_clinical_review(review_id: str, request: Request, req: ClinicalReviewDecisionRequest, authorization: str | None = Header(default=None)):  # noqa
         active = current_config()
         if active.environment != "development":
             raise HTTPException(status_code=503, detail="Clinical review disabled pending security and safety approval")
@@ -397,7 +411,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return review_response(review)
 
     @application.post("/v1/clinical-rule-governance/rules", response_model=RuleGovernanceResponse, status_code=201)
-    def create_governed_rule(req: RuleCreateRequest, request: Request, authorization: str | None = Header(default=None)):
+
+    def create_governed_rule(req: RuleCreateRequest, request: Request, authorization: str | None = Header(default=None)):  # noqa
         active = current_config()
         if active.environment != "development":
             raise HTTPException(status_code=503, detail="Rule governance disabled pending clinical governance approval")
@@ -412,7 +427,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return governed_rule_response(result)
 
     @application.get("/v1/clinical-rule-governance/rules/{rule_id}", response_model=RuleGovernanceResponse)
-    def get_governed_rule(rule_id: str, tenant_id: str, authorization: str | None = Header(default=None)):
+
+    def get_governed_rule(rule_id: str, tenant_id: str, authorization: str | None = Header(default=None)):  # noqa
         active = current_config()
         if active.environment != "development":
             raise HTTPException(status_code=503, detail="Rule governance disabled pending clinical governance approval")
@@ -441,23 +457,28 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return governed_rule_response(result)
 
     @application.post("/v1/clinical-rule-governance/rules/{rule_id}/submit", response_model=RuleGovernanceResponse)
-    def submit_governed_rule(rule_id: str, req: RuleTransitionRequest, request: Request, authorization: str | None = Header(default=None)):
+
+    def submit_governed_rule(rule_id: str, req: RuleTransitionRequest, request: Request, authorization: str | None = Header(default=None)):  # noqa
         return transition_governed_rule(rule_id, "submitted", req, request, authorization)
 
     @application.post("/v1/clinical-rule-governance/rules/{rule_id}/approve", response_model=RuleGovernanceResponse)
-    def approve_governed_rule(rule_id: str, req: RuleTransitionRequest, request: Request, authorization: str | None = Header(default=None)):
+
+    def approve_governed_rule(rule_id: str, req: RuleTransitionRequest, request: Request, authorization: str | None = Header(default=None)):  # noqa
         return transition_governed_rule(rule_id, "approved", req, request, authorization)
 
     @application.post("/v1/clinical-rule-governance/rules/{rule_id}/activate", response_model=RuleGovernanceResponse)
-    def activate_governed_rule(rule_id: str, req: RuleTransitionRequest, request: Request, authorization: str | None = Header(default=None)):
+
+    def activate_governed_rule(rule_id: str, req: RuleTransitionRequest, request: Request, authorization: str | None = Header(default=None)):  # noqa
         return transition_governed_rule(rule_id, "activated", req, request, authorization)
 
     @application.post("/v1/clinical-rule-governance/rules/{rule_id}/revoke", response_model=RuleGovernanceResponse)
-    def revoke_governed_rule(rule_id: str, req: RuleTransitionRequest, request: Request, authorization: str | None = Header(default=None)):
+
+    def revoke_governed_rule(rule_id: str, req: RuleTransitionRequest, request: Request, authorization: str | None = Header(default=None)):  # noqa
         return transition_governed_rule(rule_id, "revoked", req, request, authorization)
 
     @application.get("/v1/disease-intelligence/workflows/{disease_id}")
-    def disease_workflow(disease_id: str):
+
+    def disease_workflow(disease_id: str):  # noqa
         try:
             definition = get_definition(disease_id)
             workflow = get_workflow(disease_id)
@@ -466,7 +487,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return {"definition": definition.model_dump(mode="json"), "workflow": workflow.model_dump(mode="json"), "clinical_use_authorized": False}
 
     @application.post("/v1/disease-intelligence/monitor", response_model=MonitoringResponse)
-    def disease_monitor(request: Request, req: MonitoringRequest, authorization: str | None = Header(default=None)):
+
+    def disease_monitor(request: Request, req: MonitoringRequest, authorization: str | None = Header(default=None)):  # noqa
         active = current_config()
         if active.environment != "development":
             raise HTTPException(status_code=503, detail="Disease intelligence disabled pending security and safety approval")
@@ -484,7 +506,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return result
 
     @application.post("/v1/disease-intelligence/rules/evaluate", response_model=RuleEvaluationResponse)
-    def disease_rules(request: Request, req: MonitoringRequest, authorization: str | None = Header(default=None)):
+
+    def disease_rules(request: Request, req: MonitoringRequest, authorization: str | None = Header(default=None)):  # noqa
         active = current_config()
         if active.environment != "development":
             raise HTTPException(status_code=503, detail="Clinical rules disabled pending security and safety approval")
@@ -499,7 +522,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return result
 
     @application.post("/v1/disease-intelligence/fhir/monitor", response_model=MonitoringResponse)
-    def fhir_disease_monitor(request: Request, req: FHIRMonitoringRequest, authorization: str | None = Header(default=None)):
+
+    def fhir_disease_monitor(request: Request, req: FHIRMonitoringRequest, authorization: str | None = Header(default=None)):  # noqa
         active = current_config()
         if active.environment != "development":
             raise HTTPException(status_code=503, detail="FHIR disease monitoring disabled pending security and safety approval")
@@ -517,7 +541,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return result
 
     @application.post("/v1/disease-intelligence/clinical-assess", response_model=ClinicalAssessmentResponse)
-    def clinical_assessment(request: Request, req: ClinicalAssessmentRequest, authorization: str | None = Header(default=None)):
+
+    def clinical_assessment(request: Request, req: ClinicalAssessmentRequest, authorization: str | None = Header(default=None)):  # noqa
         active = current_config()
         if active.environment != "development":
             raise HTTPException(status_code=503, detail="Clinical assessment disabled pending security and safety approval")
@@ -531,7 +556,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return result
 
     @application.post("/v1/disease-intelligence/verified-calculations", response_model=VerifiedCalculationResponse)
-    def verified_calculations(request: Request, req: CalculationRequest, authorization: str | None = Header(default=None)):
+
+    def verified_calculations(request: Request, req: CalculationRequest, authorization: str | None = Header(default=None)):  # noqa
         active = current_config()
         if active.environment != "development":
             raise HTTPException(status_code=503, detail="Verified calculations disabled pending security and safety approval")
@@ -546,7 +572,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return result
 
     @application.post("/v1/disease-intelligence/disease-specific", response_model=DiseaseSpecificResponse)
-    def disease_specific_intelligence(request: Request, req: DiseaseSpecificRequest, authorization: str | None = Header(default=None)):
+
+    def disease_specific_intelligence(request: Request, req: DiseaseSpecificRequest, authorization: str | None = Header(default=None)):  # noqa
         active = current_config()
         if active.environment != "development":
             raise HTTPException(status_code=503, detail="Disease-specific intelligence disabled pending security and safety approval")
@@ -559,7 +586,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return result
 
     @application.post("/v1/disease-intelligence/approved-rules/evaluate", response_model=ClinicalRuleResponse)
-    def approved_clinical_rules(request: Request, req: DiseaseSpecificRequest, authorization: str | None = Header(default=None)):
+
+    def approved_clinical_rules(request: Request, req: DiseaseSpecificRequest, authorization: str | None = Header(default=None)):  # noqa
         active = current_config()
         if active.environment != "development":
             raise HTTPException(status_code=503, detail="Clinical rules disabled pending clinical governance approval")
@@ -572,7 +600,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return result
 
     @application.post("/v1/clinical-intelligence/synthetic-workflow", response_model=ClinicalWorkflowResponse)
-    def synthetic_clinical_workflow(request: Request, req: ClinicalWorkflowRequest, authorization: str | None = Header(default=None)):
+
+    def synthetic_clinical_workflow(request: Request, req: ClinicalWorkflowRequest, authorization: str | None = Header(default=None)):  # noqa
         active = current_config()
         if active.environment != "development":
             raise HTTPException(status_code=503, detail="Clinical intelligence orchestration disabled pending security and safety approval")
@@ -588,62 +617,71 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return result
 
     @application.post("/v1/clinical-workbench/synthetic", response_model=WorkbenchResponse)
-    def synthetic_clinical_workbench(req: WorkbenchRequest, authorization: str | None = Header(default=None)):
+
+    def synthetic_clinical_workbench(req: WorkbenchRequest, authorization: str | None = Header(default=None)):  # noqa
         active = current_config()
         authorize_workbench(active, authorization, req)
         return assemble_workbench(workbench_id=f"workbench-{uuid4()}", request=req)
 
     @application.post("/v1/reuse-accelerator/nocturne/diabetes-ingest", response_model=NocturneIngestResponse)
-    def nocturne_diabetes_ingest(req: NocturneIngestRequest):
+
+    def nocturne_diabetes_ingest(req: NocturneIngestRequest):  # noqa
         active = current_config()
         if active.environment != "development" or not req.synthetic or not req.tenant_id.startswith("synthetic-") or not req.patient_id.startswith("synthetic-"):
             raise HTTPException(status_code=403, detail="Only synthetic Nocturne-compatible ingestion is allowed")
         return ingest_nocturne(req)
 
     @application.post("/v1/reuse-accelerator/snomed-cds/evaluate", response_model=CdsPathwayResponse)
-    def snomed_cds_contract(req: CdsPathwayRequest):
+
+    def snomed_cds_contract(req: CdsPathwayRequest):  # noqa
         active = current_config()
         if active.environment != "development" or not req.synthetic or not req.tenant_id.startswith("synthetic-") or not req.patient_id.startswith("synthetic-"):
             raise HTTPException(status_code=403, detail="Only synthetic CDS contract evaluation is allowed")
         return evaluate_cds_pathway(req)
 
     @application.post("/v1/reuse-accelerator/ahrq-cql/execute", response_model=CqlExecutionResponse)
-    def ahrq_cql_contract(req: CqlExecutionRequest):
+
+    def ahrq_cql_contract(req: CqlExecutionRequest):  # noqa
         active = current_config()
         if active.environment != "development" or not req.synthetic or not req.tenant_id.startswith("synthetic-") or not req.patient_id.startswith("synthetic-"):
             raise HTTPException(status_code=403, detail="Only synthetic CQL contract evaluation is allowed")
         return execute_cql_contract(req)
 
     @application.post("/v1/reuse-accelerator/fhir-cql/execute", response_model=StandardsCqlResponse)
-    def fhir_cql_contract(req: StandardsCqlRequest):
+
+    def fhir_cql_contract(req: StandardsCqlRequest):  # noqa
         active = current_config()
         if active.environment != "development" or not req.synthetic or not req.tenant_id.startswith("synthetic-") or not req.patient_id.startswith("synthetic-"):
             raise HTTPException(status_code=403, detail="Only synthetic FHIR/ELM execution is allowed")
         return execute_fhir_elm_subset(req)
 
     @application.post("/v1/reuse-accelerator/fhir-cql/upstream-runtime", response_model=UpstreamCqlRuntimeResponse)
-    def upstream_fhir_cql_runtime(req: StandardsCqlRequest):
+
+    def upstream_fhir_cql_runtime(req: StandardsCqlRequest):  # noqa
         active = current_config()
         if active.environment != "development" or not req.synthetic or not req.tenant_id.startswith("synthetic-") or not req.patient_id.startswith("synthetic-"):
             raise HTTPException(status_code=403, detail="Only synthetic upstream CQL runtime execution is allowed")
         return execute_pinned_runtime(req)
 
     @application.post("/v1/reuse-accelerator/terminology/validate", response_model=TerminologyValidationResponse)
-    def terminology_validate(req: TerminologyValidationRequest):
+
+    def terminology_validate(req: TerminologyValidationRequest):  # noqa
         active = current_config()
         if active.environment != "development" or not req.synthetic or not req.tenant_id.startswith("synthetic-"):
             raise HTTPException(status_code=403, detail="Only synthetic terminology validation is allowed")
         return validate_code(req)
 
     @application.post("/v1/reuse-accelerator/unified-assess", response_model=UnifiedAssessmentResponse)
-    def unified_disease_assessment(req: UnifiedAssessmentRequest):
+
+    def unified_disease_assessment(req: UnifiedAssessmentRequest):  # noqa
         active = current_config()
         if active.environment != "development" or not req.synthetic or not req.tenant_id.startswith("synthetic-") or not req.patient_id.startswith("synthetic-"):
             raise HTTPException(status_code=403, detail="Only synthetic unified assessment is allowed")
         return unified_assessment(req)
 
     @application.get("/v1/providers/{provider}/ready")
-    def provider_ready(provider: str):
+
+    def provider_ready(provider: str):  # noqa
         active = current_config()
         if provider == "medgemma":
             return {"provider": provider, "model": active.medgemma_model, "ready": MedGemmaProvider(active).ready()}
@@ -654,7 +692,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         raise HTTPException(status_code=404, detail="unknown provider")
 
     @application.post("/v1/snapshots", response_model=SnapshotResponse)
-    def create_snapshot(request: Request, req: SnapshotRequest, authorization: str | None = Header(default=None)):
+
+    def create_snapshot(request: Request, req: SnapshotRequest, authorization: str | None = Header(default=None)):  # noqa
         active = current_config()
         if active.environment != "development":
             raise HTTPException(status_code=503, detail="Clinical inference disabled pending security and safety approval")
@@ -671,7 +710,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return result
 
     @application.post("/v1/knowledge/ground", response_model=GroundingResponse)
-    def ground_knowledge(request: Request, req: GroundingRequest, authorization: str | None = Header(default=None)):
+
+    def ground_knowledge(request: Request, req: GroundingRequest, authorization: str | None = Header(default=None)):  # noqa
         active = current_config()
         if active.environment != "development":
             raise HTTPException(status_code=503, detail="Knowledge grounding disabled pending security and safety approval")
@@ -685,7 +725,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return result
 
     @application.post("/v1/imaging/analyze", response_model=ImagingAnalysisResponse)
-    def analyze_imaging(request: Request, req: ImagingAnalysisRequest, authorization: str | None = Header(default=None)):
+
+    def analyze_imaging(request: Request, req: ImagingAnalysisRequest, authorization: str | None = Header(default=None)):  # noqa
         active = current_config()
         if active.environment != "development":
             raise HTTPException(status_code=503, detail="Imaging analysis disabled pending security and safety approval")
@@ -721,7 +762,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return result
 
     @application.post("/v1/decisions", response_model=DecisionResponse)
-    def create_decision(request: Request, req: DecisionRequest, authorization: str | None = Header(default=None), idempotency_key: str | None = Header(default=None, alias="Idempotency-Key")):
+
+    def create_decision(request: Request, req: DecisionRequest, authorization: str | None = Header(default=None), idempotency_key: str | None = Header(default=None, alias="Idempotency-Key")):  # noqa
         active = current_config()
         if active.environment != "development":
             raise HTTPException(status_code=503, detail="Clinical inference disabled pending security and safety approval")
@@ -793,7 +835,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return response
 
     @application.post("/v1/trion/fhir-draft", response_model=TrionFhirDraftResponse)
-    def create_trion_draft(request: Request, req: TrionFhirDraftRequest, authorization: str | None = Header(default=None), idempotency_key: str | None = Header(default=None, alias="Idempotency-Key")):
+
+    def create_trion_draft(request: Request, req: TrionFhirDraftRequest, authorization: str | None = Header(default=None), idempotency_key: str | None = Header(default=None, alias="Idempotency-Key")):  # noqa
         active = current_config()
         if active.environment != "development":
             raise HTTPException(status_code=503, detail="TRION clinical draft boundary disabled pending security and safety approval")
@@ -815,7 +858,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         try:
             result = TrionClient(active).execute(payload, correlation_id=request.state.correlation_id, idempotency_key=idempotency_key)
             response = TrionFhirDraftResponse.model_validate(result.payload)
-        except TrionError as exc:
+        except TrionError as exc:  # noqa
             application.state.metrics.inc("trion_failures")
             application.state.audit_sink.append(new_event("trion.failed", request.state.correlation_id, req.tenant_id, req.patient_id, "failed"))
             raise HTTPException(status_code=503, detail="TRION boundary unavailable") from None

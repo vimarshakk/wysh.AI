@@ -9,14 +9,14 @@ import sys
 ROOT = Path(__file__).parents[3]
 sys.path.insert(0, str(ROOT / "apps/api"))
 
-from app.assessment_store import AssessmentStore
-from app.audit import InMemoryAuditSink
-from app.auth import GatewayPrincipal
-from app.clinical_orchestration import ClinicalWorkflowResponse, SafetyEvaluation
-from app.imaging_research import FhirImagingStudyContract, ImagingAdapterResult, ImagingProvenanceRecord, SyntheticDicomMetadata, canonical_source_hash
-from app.multimodal_orchestration import build_multimodal_envelope
-from app.review_store import ReviewStore
-from app.workbench import WorkbenchAccessContext, WorkbenchRequest, assemble_workbench, validate_workbench_access
+from app.assessment_store import AssessmentStore  # noqa
+from app.audit import InMemoryAuditSink  # noqa
+from app.auth import GatewayPrincipal  # noqa
+from app.clinical_orchestration import ClinicalWorkflowResponse, SafetyEvaluation  # noqa
+from app.imaging_research import FhirImagingStudyContract, ImagingAdapterResult, ImagingProvenanceRecord, SyntheticDicomMetadata, canonical_source_hash  # noqa
+from app.multimodal_orchestration import build_multimodal_envelope  # noqa
+from app.review_store import ReviewStore  # noqa
+from app.workbench import WorkbenchAccessContext, WorkbenchRequest, assemble_workbench, validate_workbench_access  # noqa
 
 
 def main() -> None:
@@ -35,12 +35,12 @@ def main() -> None:
     except PermissionError:
         unauthorized = True
     workbench = assemble_workbench(workbench_id="workbench-r10", request=request)
-    reviews, audit, assessments = ReviewStore(":memory:"), InMemoryAuditSink(), AssessmentStore(":memory:")
+    reviews, audit, assessments = ReviewStore(":memory:"), InMemoryAuditSink(), AssessmentStore(":memory:")  # noqa
     review = reviews.create(tenant_id=tenant_id, patient_id=patient_id, disease_id="multimodal-imaging", assessment_id=workbench.workbench_id, assessment_input_hash=workbench.provenance_hash, actor_subject="synthetic-clinician")
     approved = reviews.decide(review_id=review.review_id, tenant_id=tenant_id, patient_id=patient_id, expected_version=1, action="approve", actor_subject="synthetic-clinician", note="synthetic workbench review")
     record = assessments.create_draft(tenant_id=tenant_id, patient_id=patient_id, evidence_hash=workbench.provenance_hash, review_id=review.review_id)
     finalized = assessments.approve_from_review(assessment_id=record.assessment_id, tenant_id=tenant_id, patient_id=patient_id, review_id=review.review_id, review_state=approved.state, actor="synthetic-clinician", expected_version=1)
-    report = {"schema_version": "r10-gate-v1", "milestone": "R10A-R10E", "status": "PASS", "synthetic_only": True, "workbench": workbench.model_dump(mode="json"), "authorization": {"purpose": "PASS", "consent": "PASS", "tenant_patient_scope": "PASS", "negative_scope_case": "PASS" if unauthorized else "FAIL"}, "workflow_lifecycle": {"review_state": approved.state, "assessment_state": finalized.state, "assessment_version": finalized.version, "model_or_rule_approval_separate": True}, "safety": {"imaging_abstained_preserved": workbench.imaging_status == "ABSTAINED", "clinical_use_authorized": False, "autonomous_prescription": False, "autonomous_diagnosis": False, "autonomous_emergency_action": False}, "clinical_governance": "HOLD", "clinical_validation": "NO-GO", "production": "NO-GO"}
+    report = {"schema_version": "r10-gate-v1", "milestone": "R10A-R10E", "status": "PASS", "synthetic_only": True, "workbench": workbench.model_dump(mode="json"), "authorization": {"purpose": "PASS", "consent": "PASS", "tenant_patient_scope": "PASS", "negative_scope_case": "PASS" if unauthorized else "FAIL"}, "workflow_lifecycle": {"review_state": approved.state, "assessment_state": finalized.state, "assessment_version": finalized.version, "model_or_rule_approval_separate": True}, "safety": {"imaging_abstained_preserved": workbench.imaging_status == "ABSTAINED", "clinical_use_authorized": False, "autonomous_prescription": False, "autonomous_diagnosis": False, "autonomous_emergency_action": False}, "clinical_governance": "HOLD", "clinical_validation": "NO-GO", "production": "NO-GO"}  # noqa
     output = ROOT / "artifacts/r10-test-evidence/r10-gate.json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2) + "\n")

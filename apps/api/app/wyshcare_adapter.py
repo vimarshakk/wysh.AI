@@ -21,6 +21,7 @@ class BridgeResponse(Protocol):
 
 
 class BridgeTransport(Protocol):
+
     def __call__(self, *, headers: Mapping[str, str], json: Mapping[str, Any]) -> BridgeResponse: ...
 
 

@@ -6,7 +6,7 @@ Synthetic-only.
 
 from __future__ import annotations
 
-import pytest
+import pytest  # noqa
 
 from app.system_one.drift_monitor import (
     DriftConfig,

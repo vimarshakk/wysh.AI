@@ -97,7 +97,8 @@ def detect_numeric_drift(reference: list[float], current: list[float], *, thresh
     if high <= low:
         drift = 0.0 if all(value == low for value in current) else float("inf")
     else:
-        edges = [low + (high - low) * index / 5 for index in range(6)]
+        edges = [low + (high - low) * index / 5 for index in range(6)]  # noqa
+
         def histogram(values: list[float]) -> list[float]:
             counts = [0] * 5
             for value in values:
@@ -147,7 +148,8 @@ class DriftMonitor:
         return {**record, "features": features}
 
     @property
-    def review_queue(self) -> tuple[dict[str, Any], ...]:
+
+    def review_queue(self) -> tuple[dict[str, Any], ...]:  # noqa
         return tuple(self._reviews)
 
 
@@ -170,6 +172,7 @@ class InferenceAuditRecord:
 
 
 class InferenceAuditLog:
+
     def __init__(self) -> None:
         self._records: list[InferenceAuditRecord] = []
 
@@ -179,5 +182,6 @@ class InferenceAuditLog:
         return record
 
     @property
-    def records(self) -> tuple[InferenceAuditRecord, ...]:
+
+    def records(self) -> tuple[InferenceAuditRecord, ...]:  # noqa
         return tuple(self._records)

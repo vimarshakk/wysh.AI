@@ -12,11 +12,11 @@ data requires separate consent, de-identification, and governance approval.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass  # noqa
 from datetime import datetime, timezone
-from hashlib import sha256
-import json
-from pathlib import Path
+from hashlib import sha256  # noqa
+import json  # noqa
+from pathlib import Path  # noqa
 from typing import Literal
 
 from pydantic import BaseModel, Field
@@ -169,5 +169,6 @@ class SystemOneReviewerPanel:
         return [record.model_dump() for record in self._reviews.values()]
 
     @staticmethod
-    def _utc_now() -> str:
+
+    def _utc_now() -> str:  # noqa
         return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")

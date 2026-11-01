@@ -12,7 +12,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from math import exp
-from pathlib import Path
+from pathlib import Path  # noqa
 from typing import Literal
 
 from pydantic import BaseModel, Field
@@ -212,7 +212,8 @@ class SystemOneValidationEngine:
         return slices
 
     @staticmethod
-    def _dim_value(case: ValidationCase, dimension: str) -> str:
+
+    def _dim_value(case: ValidationCase, dimension: str) -> str:  # noqa
         if dimension == "language":
             return case.language
         if dimension == "age_band":
@@ -278,7 +279,8 @@ class SystemOneValidationEngine:
         )
 
     @staticmethod
-    def _utc_now() -> str:
+
+    def _utc_now() -> str:  # noqa
         from datetime import datetime, timezone
         return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
 

@@ -18,7 +18,7 @@ from uuid import uuid4
 from pydantic import BaseModel, Field, field_validator
 
 from .config import Settings
-from .decision_model import DecisionAction, SystemOneDecision, SystemOneDecisionModel
+from .decision_model import DecisionAction, SystemOneDecision, SystemOneDecisionModel  # noqa
 from .feature_extractor import ClinicalFact, extract, required_metrics_for
 from .model_lifecycle import ModelLifecycleStore
 from .routing_engine import RoutingEngine
@@ -40,14 +40,16 @@ class SystemOneRoutingRequest(BaseModel):
 
     @field_validator("tenant_id", "patient_id")
     @classmethod
-    def synthetic_identifiers_only(cls, value: str) -> str:
+
+    def synthetic_identifiers_only(cls, value: str) -> str:  # noqa
         if not value.startswith("synthetic-"):
             raise ValueError("tenant and patient identifiers must be synthetic")
         return value
 
     @field_validator("context")
     @classmethod
-    def no_phi_in_context(cls, value: dict[str, str | int | float | bool | None]) -> dict[str, str | int | float | bool | None]:
+
+    def no_phi_in_context(cls, value: dict[str, str | int | float | bool | None]) -> dict[str, str | int | float | bool | None]:  # noqa
         forbidden = {"name", "full_name", "email", "phone", "mobile", "address", "dob", "date_of_birth", "aadhaar", "mrn", "medical_record_number", "ssn", "free_text", "document"}
         if forbidden.intersection(key.lower() for key in value):
             raise ValueError("context contains a prohibited identifier or raw-text field")
@@ -58,7 +60,8 @@ class SystemOneRoutingRequest(BaseModel):
 
     @field_validator("synthetic")
     @classmethod
-    def must_be_synthetic(cls, value: bool) -> bool:
+
+    def must_be_synthetic(cls, value: bool) -> bool:  # noqa
         if value is not True:
             raise ValueError("system one routing accepts synthetic requests only")
         return value

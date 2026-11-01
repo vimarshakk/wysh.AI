@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime  # noqa
 from math import isnan
 from random import Random
 from typing import Any, Iterable

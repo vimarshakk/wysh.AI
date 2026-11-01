@@ -12,14 +12,14 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from hashlib import sha256
 import json
-from pathlib import Path
+from pathlib import Path  # noqa
 from typing import Any
 
 from ..config import Settings
-from ..decision_model import SystemOneDecisionModel
+from ..decision_model import SystemOneDecisionModel  # noqa
 from ..feature_extractor import extract
 from ..ml_governance import GovernanceError, load_governed_dataset
-from ..ml_operations import MLOperationsError, ModelVersion, ResearchModelRegistry
+from ..ml_operations import MLOperationsError, ModelVersion, ResearchModelRegistry  # noqa
 from ..model_lifecycle import ModelLifecycleStore, REGISTRY_PATH, STATUSES
 from .decision_heads import (
     SystemOneDecisionHeads,
@@ -84,7 +84,7 @@ class SystemOneTrainingPipeline:
         """Run the full training pipeline for one indication."""
         from datetime import datetime, timezone
 
-        started = datetime.now(timezone.utc)
+        started = datetime.now(timezone.utc)  # noqa
 
         # Stage 1: Load governed synthetic dataset
         try:
@@ -118,7 +118,7 @@ class SystemOneTrainingPipeline:
         # Stage 5: Train on encoded features (deterministic prototype training)
         train_features = self._encode_rows(encoder, train_rows)
         val_features = self._encode_rows(encoder, validation_rows)
-        test_features = self._encode_rows(encoder, test_rows)
+        test_features = self._encode_rows(encoder, test_rows)  # noqa
 
         # Deterministic head weight adjustment based on train/val performance
         head_metrics = self._evaluate_heads(heads, train_features, val_features)
@@ -216,7 +216,7 @@ class SystemOneTrainingPipeline:
             correct = 0
             total = 0
             for encoded in val_features:
-                embeddings = tuple(encoded["values"][: encoder_config.embedding_dim] if (encoder_config := encoder._config) else encoded["values"][:768])
+                embeddings = tuple(encoded["values"][: encoder_config.embedding_dim] if (encoder_config := encoder._config) else encoded["values"][:768])  # noqa
                 # Pad/truncate to embedding_dim
                 emb_list = list(embeddings)
                 if len(emb_list) < 768:

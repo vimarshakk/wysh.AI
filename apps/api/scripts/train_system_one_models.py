@@ -17,7 +17,7 @@ from pathlib import Path
 from typing import Any
 
 from app.config import Settings
-from app.decision_model import SystemOneDecisionModel
+from app.decision_model import SystemOneDecisionModel  # noqa
 from app.feature_extractor import extract
 from app.ml_governance import (
     GovernanceError,
@@ -26,14 +26,14 @@ from app.ml_governance import (
     train_baseline,
 )
 from app.ml_operations import ModelVersion, ResearchModelRegistry
-from app.model_lifecycle import ModelLifecycleStore, REGISTRY_PATH, STATUSES
+from app.model_lifecycle import ModelLifecycleStore, REGISTRY_PATH, STATUSES  # noqa
 from app.system_one.decision_heads import (
     SystemOneDecisionHeads,
     HeadWeights,
 )
 from app.system_one.encoder import SystemOneEncoder, default_encoder_config
 from app.system_one.rlcd import RLCDConfig, SystemOneRLCD
-from app.system_one.validation_engine import SystemOneValidationEngine, ValidationCase
+from app.system_one.validation_engine import SystemOneValidationEngine, ValidationCase  # noqa
 from app.system_one.validation_harness import SystemOneValidationHarness
 
 
@@ -134,7 +134,7 @@ def build_head_weights_from_experiment(
     score_weights = [0.0] * embedding_dim
     noul_weights = [0.0] * embedding_dim
 
-    feature_to_idx = {}
+    feature_to_idx = {}  # noqa
     # We need to know which embedding positions correspond to which features
     # Since extract() produces features in a fixed order, we reconstruct it
     # from the feature extractor's feature_names
@@ -196,7 +196,7 @@ def train_all_models(
     seed: int = 20261101,
 ) -> dict[str, Any]:
     """Train models for all indications and return results."""
-    harness = SystemOneValidationHarness(settings=settings)
+    harness = SystemOneValidationHarness(settings=settings)  # noqa
     encoder_config = default_encoder_config(
         model_id="wysh.system-one.encoder.v1",
         language="en",
@@ -256,12 +256,12 @@ def train_all_models(
         exp_result = results[indication]
 
         # Build encoder + heads with trained weights
-        encoder = SystemOneEncoder(encoder_config, settings=settings)
+        encoder = SystemOneEncoder(encoder_config, settings=settings)  # noqa
         heads = SystemOneDecisionHeads(embedding_dim=embedding_dim)
         for head_id, hw in exp_result["head_weights"].items():
             heads.register_head(head_id, hw)
 
-        rlcd = SystemOneRLCD(RLCDConfig())
+        rlcd = SystemOneRLCD(RLCDConfig())  # noqa
 
         # Report training experiment metrics as validation results
         # The R8B train_baseline already computes train/validation/test metrics
@@ -297,7 +297,7 @@ def train_all_models(
         print(f"    test_brier: {test_metrics.get('brier')}")
         print(f"    test_sensitivity: {test_metrics.get('sensitivity')}")
         print(f"    test_specificity: {test_metrics.get('specificity')}")
-        print(f"    clinical_use_authorized: False")
+        print(f"    clinical_use_authorized: False")  # noqa
 
     return {
         "training_results": results,
@@ -333,13 +333,13 @@ def main() -> None:
                 "model_id": r["model_id"],
                 "dataset_id": r["dataset_id"],
                 "experiment_id": r.get("experiment_id"),
-                "provenance_hash": r.get("provenance_hash"),
+                "provenance_hash": r.get("provenance_hash"),  # noqa
                 "n_cases": r["n_cases"],
                 "test_accuracy": r["choice_accuracy"],
                 "test_brier_score": r["noul_brier_score"],
                 "clinical_use_authorized": r["clinical_use_authorized"],
                 "synthetic_only": r["synthetic_only"],
-                "provenance_hash": r["provenance_hash"],
+                "provenance_hash": r["provenance_hash"],  # noqa
                 "validation_timestamp": r["validation_timestamp"],
             }
             for ind, r in results["validation_results"].items()

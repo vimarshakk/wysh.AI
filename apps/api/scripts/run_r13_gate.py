@@ -10,10 +10,10 @@ import sys
 ROOT = Path(__file__).parents[3]
 sys.path.insert(0, str(ROOT / "apps/api"))
 
-from app.imaging_research_execution import SyntheticPixelTask, execute_synthetic_pixel_task
-from app.interop_adapters import AuthorizationParityCase, evaluate_authorization_parity
-from app.ml_governance import load_governed_dataset, train_baseline, train_interpretable_comparator
-from app.research_evaluation import evaluation_readiness
+from app.imaging_research_execution import SyntheticPixelTask, execute_synthetic_pixel_task  # noqa
+from app.interop_adapters import AuthorizationParityCase, evaluate_authorization_parity  # noqa
+from app.ml_governance import load_governed_dataset, train_baseline, train_interpretable_comparator  # noqa
+from app.research_evaluation import evaluation_readiness  # noqa
 
 
 def main() -> None:
@@ -37,7 +37,7 @@ def main() -> None:
     parity = evaluate_authorization_parity([AuthorizationParityCase(case_id="allow", tenant_id="synthetic-t", patient_id="synthetic-p", relation="clinician", canonical_allowed=True, candidate_allowed=True), AuthorizationParityCase(case_id="revoked", tenant_id="synthetic-t", patient_id="synthetic-p", relation="caregiver", canonical_allowed=False, candidate_allowed=False, revoked=True)])
     live_path = ROOT / "artifacts/r13-test-evidence/r13-medgemma-safety.json"
     live = json.loads(live_path.read_text()) if live_path.exists() else {"status": "NOT_RUN"}
-    report = {"schema_version": "r13-gate-v1", "milestone": "R13A-R13F", "status": "PASS" if live.get("status") == "PASS" else "PARTIAL_BLOCKED", "baseline_score": 69, "new_score": 69, "score_delta": 0, "score_delta_reason": "R13 engineering evidence does not satisfy independent clinical validation, imaging diagnostic validity, or regulatory readiness criteria.", "r13a": "PASS", "r13b": "PASS_WITH_INSUFFICIENT_SAMPLE", "r13c": "PASS_NON_DIAGNOSTIC_RESEARCH", "r13d_live_medgemma": live.get("status"), "r13e_adoption": "PASS_DECISIONS_DOCUMENTED", "r13f_regression": "PASS", "authorization_parity": parity["status"], "clinical_governance": "HOLD", "clinical_validation": "NO-GO", "production": "NO-GO", "wyshcare_modified": False, "remaining_blockers": ["independent clinical validation", "adequate rights-cleared representative datasets", "imaging diagnostic validity", "regulatory and operational readiness"] + ([] if live.get("status") == "PASS" else ["expanded live MedGemma safety gate unavailable or failed"])}
+    report = {"schema_version": "r13-gate-v1", "milestone": "R13A-R13F", "status": "PASS" if live.get("status") == "PASS" else "PARTIAL_BLOCKED", "baseline_score": 69, "new_score": 69, "score_delta": 0, "score_delta_reason": "R13 engineering evidence does not satisfy independent clinical validation, imaging diagnostic validity, or regulatory readiness criteria.", "r13a": "PASS", "r13b": "PASS_WITH_INSUFFICIENT_SAMPLE", "r13c": "PASS_NON_DIAGNOSTIC_RESEARCH", "r13d_live_medgemma": live.get("status"), "r13e_adoption": "PASS_DECISIONS_DOCUMENTED", "r13f_regression": "PASS", "authorization_parity": parity["status"], "clinical_governance": "HOLD", "clinical_validation": "NO-GO", "production": "NO-GO", "wyshcare_modified": False, "remaining_blockers": ["independent clinical validation", "adequate rights-cleared representative datasets", "imaging diagnostic validity", "regulatory and operational readiness"] + ([] if live.get("status") == "PASS" else ["expanded live MedGemma safety gate unavailable or failed"])}  # noqa
     output = ROOT / "artifacts/r13-test-evidence/r13-gate.json"
     output.write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps({"status": report["status"], "output": str(output), "score": report["new_score"], "live_medgemma": live.get("status")}))

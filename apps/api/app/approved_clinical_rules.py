@@ -9,7 +9,7 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 from .clinical_engine import normalize_measurements
 from .disease_intelligence import LongitudinalMeasurement

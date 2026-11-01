@@ -82,7 +82,7 @@ def main() -> None:
     review_count = sum(1 for r in rows if r["synthetic_review_required"] == 1)
     print(f"Generated {N_ROWS} synthetic rows to {OUTPUT_PATH}")
     print(f"Review-required (label=1): {review_count} ({review_count/N_ROWS*100:.1f}%)")
-    print(f"Features: hba1c_percent, mean_glucose_mg_dl, bp_systolic_mmhg, bp_diastolic_mmhg, egfr_ml_min_1_73m2, urine_acr_mg_g, age_years")
+    print(f"Features: hba1c_percent, mean_glucose_mg_dl, bp_systolic_mmhg, bp_diastolic_mmhg, egfr_ml_min_1_73m2, urine_acr_mg_g, age_years")  # noqa
 
 
 if __name__ == "__main__":

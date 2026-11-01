@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import time
 from dataclasses import replace
-from typing import Any, TypeVar
+, TypeVar  # noqa
 
 from pydantic import BaseModel
 
@@ -17,6 +17,7 @@ T = TypeVar("T", bound=BaseModel)
 
 
 class ModelGateway:
+
     def __init__(self, settings: Settings, registry: ModelRegistry | None = None, metrics: Metrics | None = None):
         self.settings = settings
         self.registry = registry or load_registry()

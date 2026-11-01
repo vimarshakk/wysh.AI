@@ -22,7 +22,7 @@ def _pseudonymize(value: str, kind: str) -> str:
 
 @dataclass(frozen=True)
 class AuditEvent:
-    event_type: Literal["decision.requested", "decision.completed", "decision.abstained", "snapshot.created", "knowledge.grounded", "knowledge.abstained", "imaging.abstained", "disease.monitored", "disease.assessed", "disease.rules_evaluated", "trion.requested", "trion.completed", "trion.failed", "clinical_review.created", "clinical_review.approved", "clinical_review.rejected", "clinical_review.revision_requested", "clinical_review.conflict", "clinical_rule.created", "clinical_rule.submitted", "clinical_rule.approved", "clinical_rule.activated", "clinical_rule.expired", "clinical_rule.revoked", "clinical_rule.rejected", "clinical_rule.conflict", "clinical_workflow.requested", "clinical_workflow.completed", "clinical_workflow.abstained"]
+    event_type: Literal["decision.requested", "decision.completed", "decision.abstained", "snapshot.created", "knowledge.grounded", "knowledge.abstained", "imaging.abstained", "disease.monitored", "disease.assessed", "disease.rules_evaluated", "trion.requested", "trion.completed", "trion.failed", "clinical_review.created", "clinical_review.approved", "clinical_review.rejected", "clinical_review.revision_requested", "clinical_review.conflict", "clinical_rule.created", "clinical_rule.submitted", "clinical_rule.approved", "clinical_rule.activated", "clinical_rule.expired", "clinical_rule.revoked", "clinical_rule.rejected", "clinical_rule.conflict", "clinical_workflow.requested", "clinical_workflow.completed", "clinical_workflow.abstained"]  # noqa
     event_id: str
     correlation_id: str
     tenant_id: str
