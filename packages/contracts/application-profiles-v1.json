@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "product": "wysh.AI",
+  "clinical_use_authorized": false,
+  "profiles": [
+    {"id": "patient-companion", "audience": "patient", "capabilities": ["education", "care-navigation"], "requires_human_review": true},
+    {"id": "clinician-copilot", "audience": "clinician", "capabilities": ["snapshot", "evidence-grounding", "workflow-decision", "review"], "requires_human_review": true},
+    {"id": "care-navigation", "audience": "care-team", "capabilities": ["care-navigation", "workflow-decision", "review"], "requires_human_review": true},
+    {"id": "operations", "audience": "operations", "capabilities": ["workflow-decision", "summarization"], "requires_human_review": true},
+    {"id": "research", "audience": "research", "capabilities": ["evidence-grounding", "evaluation"], "requires_human_review": false}
+  ]
+}

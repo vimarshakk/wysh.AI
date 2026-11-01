@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wysh.ai/contracts/disease-specific-intelligence-v1.schema.json",
+  "title": "wysh.AI Disease-Specific Intelligence v1",
+  "description": "Synthetic-only longitudinal observation and data-quality contract. It is not diagnostic or predictive clinical decision support.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["assessment_id", "disease_id", "pack_version", "status", "findings", "missing_metrics", "trends", "derived_metrics", "limitations", "provenance_hash", "synthetic_only", "clinical_use_authorized", "human_review_required"],
+  "properties": {
+    "assessment_id": {"type": "string", "minLength": 1},
+    "disease_id": {"type": "string", "minLength": 1},
+    "pack_version": {"type": "string", "minLength": 1},
+    "status": {"enum": ["DATA_QUALITY_ONLY", "ABSTAINED"]},
+    "findings": {"type": "array"},
+    "missing_metrics": {"type": "array", "items": {"type": "string"}},
+    "trends": {"type": "array"},
+    "derived_metrics": {"type": "array"},
+    "limitations": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "provenance_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "synthetic_only": {"const": true},
+    "clinical_use_authorized": {"const": false},
+    "human_review_required": {"const": true}
+  }
+}

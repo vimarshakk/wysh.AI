@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wysh.ai/contracts/wyshcare-ai-bridge-v1.schema.json",
+  "title": "WyshCare to wysh.AI Governed Clinical Draft Bridge v1",
+  "description": "Synthetic-only integration boundary. It carries authorization context and provenance but never authorizes autonomous clinical use.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "request_id", "correlation_id", "tenant_id", "patient_id", "synthetic", "purpose_of_use", "consent_id", "evidence", "requested_model", "review_required"],
+  "properties": {
+    "schema_version": {"const": "wyshcare-ai-bridge-v1"},
+    "request_id": {"type": "string", "minLength": 1, "maxLength": 128},
+    "correlation_id": {"type": "string", "minLength": 1, "maxLength": 128},
+    "tenant_id": {"type": "string", "pattern": "^synthetic-.+"},
+    "patient_id": {"type": "string", "pattern": "^synthetic-.+"},
+    "practitioner_subject": {"type": ["string", "null"], "maxLength": 200},
+    "synthetic": {"const": true},
+    "purpose_of_use": {"type": "string", "minLength": 1, "maxLength": 120},
+    "consent_id": {"type": "string", "minLength": 1, "maxLength": 200},
+    "delegated_by": {"type": ["string", "null"], "maxLength": 200},
+    "evidence": {
+      "type": "array", "minItems": 1, "maxItems": 100,
+      "items": {"type": "object", "additionalProperties": false, "required": ["evidence_id", "source_type", "recorded_at", "content_sha256"], "properties": {
+        "evidence_id": {"type": "string", "minLength": 1},
+        "source_type": {"enum": ["fhir_observation", "fhir_condition", "fhir_medication", "fhir_encounter", "clinical_document", "imaging_study"]},
+        "recorded_at": {"type": "string", "minLength": 1},
+        "content_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }}
+    },
+    "requested_model": {"type": "object", "additionalProperties": false, "required": ["provider", "model_id"], "properties": {
+      "provider": {"type": "string", "minLength": 1},
+      "model_id": {"type": "string", "minLength": 1},
+      "model_version": {"type": ["string", "null"]}
+    }},
+    "requested_rule_version": {"type": ["string", "null"]},
+    "terminology_version": {"type": ["string", "null"]},
+    "review_required": {"const": true},
+    "clinical_use_authorized": {"const": false}
+  }
+}

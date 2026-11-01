@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wysh.ai/contracts/imaging-analysis-v1.schema.json",
+  "title": "wysh.AI Imaging Analysis v1",
+  "description": "Metadata-only imaging handoff. Image bytes and clinical interpretation are intentionally outside this contract.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tenant_id", "patient_id", "study", "task", "synthetic"],
+  "properties": {
+    "tenant_id": {"type": "string", "minLength": 1, "maxLength": 200},
+    "patient_id": {"type": "string", "minLength": 1, "maxLength": 200},
+    "synthetic": {"const": true},
+    "application_profile": {"enum": ["clinician-copilot", "research"]},
+    "task": {"enum": ["quality_check", "segmentation_draft", "report_draft"]},
+    "observations": {
+      "type": "array", "maxItems": 20,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["label", "body_region", "laterality", "certainty", "evidence_ref"],
+        "properties": {
+          "label": {"type": "string", "minLength": 1, "maxLength": 300},
+          "body_region": {"type": "string", "minLength": 1, "maxLength": 200},
+          "laterality": {"enum": ["left", "right", "bilateral", "midline", "not-applicable", "unknown"]},
+          "certainty": {"enum": ["observed", "uncertain"]},
+          "evidence_ref": {"type": "string", "minLength": 1, "maxLength": 200}
+        }
+      }
+    },
+    "segmentation_prompts": {
+      "type": "array", "maxItems": 10,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["prompt_type", "coordinates", "text"],
+        "properties": {
+          "prompt_type": {"enum": ["point", "box", "scribble", "text"]},
+          "coordinates": {"type": "array", "maxItems": 128, "items": {"type": "number"}},
+          "text": {"type": ["string", "null"], "maxLength": 300}
+        }
+      }
+    },
+    "study": {
+      "type": "object", "additionalProperties": false,
+      "required": ["study_id", "image_id", "modality", "content_type", "content_sha256", "synthetic"],
+      "properties": {
+        "study_id": {"type": "string", "minLength": 1, "maxLength": 200},
+        "image_id": {"type": "string", "minLength": 1, "maxLength": 200},
+        "modality": {"enum": ["XR", "CT", "MR", "US", "PATHOLOGY"]},
+        "content_type": {"enum": ["image/dicom", "image/png", "image/jpeg", "image/tiff"]},
+        "content_sha256": {"type": "string", "pattern": "^[a-fA-F0-9]{64}$"},
+        "width": {"type": ["integer", "null"], "minimum": 1},
+        "height": {"type": ["integer", "null"], "minimum": 1},
+        "synthetic": {"const": true}
+      }
+    }
+  }
+}

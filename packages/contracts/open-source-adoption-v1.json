@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0",
+  "policy": "adapter-only-no-vendoring",
+  "third_party_code_copied": false,
+  "model_weights_copied": false,
+  "projects": [
+    {
+      "id": "monai",
+      "source_url": "https://github.com/Project-MONAI/MONAI",
+      "role": "imaging-foundation-candidate",
+      "integration_mode": "adapter-only",
+      "code_license": "Apache-2.0",
+      "code_license_verified": true,
+      "weights_license_status": "separate-review-required",
+      "promotion_status": "candidate"
+    },
+    {
+      "id": "ohif-ai",
+      "source_url": "https://github.com/CCI-Bonn/OHIF-AI",
+      "role": "imaging-workstation-reference",
+      "integration_mode": "adapter-only",
+      "code_license": "Apache-2.0",
+      "code_license_verified": true,
+      "weights_license_status": "separate-review-required",
+      "promotion_status": "candidate"
+    },
+    {
+      "id": "radvision-ai",
+      "source_url": "https://github.com/birwatkar123-collab/RadVision-AI-Clinical-Radiology-Biomedical-Vision-Assistant",
+      "role": "ux-and-workflow-reference",
+      "integration_mode": "reference-only",
+      "code_license": "unverified",
+      "code_license_verified": false,
+      "weights_license_status": "unverified",
+      "promotion_status": "blocked"
+    },
+    {
+      "id": "medrax",
+      "source_url": "https://github.com/mbzuai-oryx/MedRAX",
+      "role": "tool-routing-research-reference",
+      "integration_mode": "reference-only",
+      "code_license": "unverified",
+      "code_license_verified": false,
+      "weights_license_status": "unverified",
+      "promotion_status": "blocked"
+    },
+    {
+      "id": "nightscout-cgm-remote-monitor",
+      "source_url": "https://github.com/nightscout/cgm-remote-monitor",
+      "role": "glucose-ingestion-and-time-series-reference",
+      "integration_mode": "reference-only",
+      "code_license": "AGPL-3.0",
+      "code_license_verified": true,
+      "weights_license_status": "not-applicable",
+      "promotion_status": "blocked"
+    },
+    {
+      "id": "bahmni",
+      "source_url": "https://github.com/Bahmni",
+      "role": "hospital-workflow-reference",
+      "integration_mode": "reference-only",
+      "code_license": "multi-repository-review-required",
+      "code_license_verified": false,
+      "weights_license_status": "not-applicable",
+      "promotion_status": "blocked"
+    },
+    {
+      "id": "ahrq-cds-connect-cql-services",
+      "source_url": "https://github.com/AHRQ-CDS/AHRQ-CDS-Connect-CQL-SERVICES",
+      "role": "cql-and-cds-hooks-reference",
+      "integration_mode": "adapter-only",
+      "code_license": "Apache-2.0",
+      "code_license_verified": true,
+      "weights_license_status": "not-applicable",
+      "promotion_status": "candidate"
+    },
+    {
+      "id": "openemr",
+      "source_url": "https://github.com/openemr/openemr",
+      "role": "ehr-and-fhir-workflow-reference",
+      "integration_mode": "reference-only",
+      "code_license": "GPL-3.0",
+      "code_license_verified": true,
+      "weights_license_status": "not-applicable",
+      "promotion_status": "blocked"
+    },
+    {
+      "id": "openmrs",
+      "source_url": "https://github.com/openmrs",
+      "role": "global-health-record-workflow-reference",
+      "integration_mode": "reference-only",
+      "code_license": "multi-repository-review-required",
+      "code_license_verified": false,
+      "weights_license_status": "not-applicable",
+      "promotion_status": "blocked"
+    }
+  ]
+}

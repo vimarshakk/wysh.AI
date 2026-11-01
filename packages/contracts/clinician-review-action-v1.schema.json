@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wysh.ai/contracts/clinician-review-action-v1.schema.json",
+  "title": "wysh.AI Clinician Review Action v1",
+  "description": "A UI-to-review-service handoff. Approval is human-owned and does not authorize clinical use by itself.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["snapshot_id", "from_state", "to_state", "reviewer", "reason", "correlation_id"],
+  "properties": {
+    "snapshot_id": {"type": "string", "minLength": 1, "maxLength": 200},
+    "from_state": {"const": "DRAFT"},
+    "to_state": {"enum": ["APPROVED", "REJECTED"]},
+    "reviewer": {
+      "type": "object", "additionalProperties": false,
+      "required": ["subject", "role"],
+      "properties": {
+        "subject": {"type": "string", "minLength": 1, "maxLength": 200},
+        "role": {"enum": ["clinician", "reviewer", "admin"]}
+      }
+    },
+    "reason": {"type": "string", "minLength": 1, "maxLength": 2000},
+    "correlation_id": {"type": "string", "pattern": "^[A-Za-z0-9._:-]{1,128}$"},
+    "evidence_refs": {"type": "array", "maxItems": 100, "items": {"type": "string", "minLength": 1, "maxLength": 200}}
+  }
+}
