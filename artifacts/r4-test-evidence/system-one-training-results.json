@@ -1,0 +1,45 @@
+{
+  "schema_version": "system-one-training-results-v1",
+  "seed": 20261101,
+  "embedding_dim": 768,
+  "clinical_use_authorized": false,
+  "synthetic_only": true,
+  "results": {
+    "diabetes": {
+      "model_id": "wysh.synthetic.diabetes.review.v1",
+      "dataset_id": "wysh.synthetic.validation.v1",
+      "experiment_id": null,
+      "provenance_hash": "9b5f52ad144098d15fbf9438c798e24c3cd1c5f9364ddd85ccef7379f1134988",
+      "n_cases": 24,
+      "test_accuracy": 0.958333,
+      "test_brier_score": 0.050407,
+      "clinical_use_authorized": false,
+      "synthetic_only": true,
+      "validation_timestamp": "2026-11-01T18:37:40.963408Z"
+    },
+    "hypertension": {
+      "model_id": "wysh.synthetic.hypertension.review.v1",
+      "dataset_id": "wysh.synthetic.validation.v1",
+      "experiment_id": null,
+      "provenance_hash": "9b5f52ad144098d15fbf9438c798e24c3cd1c5f9364ddd85ccef7379f1134988",
+      "n_cases": 24,
+      "test_accuracy": 0.958333,
+      "test_brier_score": 0.050407,
+      "clinical_use_authorized": false,
+      "synthetic_only": true,
+      "validation_timestamp": "2026-11-01T18:37:40.963438Z"
+    },
+    "chronic_kidney_disease": {
+      "model_id": "wysh.synthetic.ckd.review.v1",
+      "dataset_id": "wysh.synthetic.validation.v1",
+      "experiment_id": null,
+      "provenance_hash": "9b5f52ad144098d15fbf9438c798e24c3cd1c5f9364ddd85ccef7379f1134988",
+      "n_cases": 24,
+      "test_accuracy": 0.958333,
+      "test_brier_score": 0.050407,
+      "clinical_use_authorized": false,
+      "synthetic_only": true,
+      "validation_timestamp": "2026-11-01T18:37:40.963454Z"
+    }
+  }
+}
