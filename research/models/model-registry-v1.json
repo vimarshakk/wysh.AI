@@ -1,0 +1,15 @@
+{
+  "schema_version": "r8e-model-registry-v1",
+  "synthetic_only": true,
+  "clinical_approval_policy": "No automated or synthetic workflow can set CLINICALLY_APPROVED.",
+  "system_one_architecture": true,
+  "model_types": {
+    "system_one_decision": "fast deterministic probabilistic routing model, no text generation",
+    "system_two_llm": "conversational LLM, gated, human-review only, not on hot path"
+  },
+  "models": [
+    {"model_id": "wysh.synthetic.diabetes.review.v1", "dataset_id": "wysh.synthetic.diabetes.review.v1", "model_type": "system_one_decision", "indication": "diabetes", "status": "EXPERIMENTAL", "history": []},
+    {"model_id": "wysh.synthetic.hypertension.review.v1", "dataset_id": "wysh.synthetic.hypertension.review.v1", "model_type": "system_one_decision", "indication": "hypertension", "status": "EXPERIMENTAL", "history": []},
+    {"model_id": "wysh.synthetic.ckd.review.v1", "dataset_id": "wysh.synthetic.ckd.review.v1", "model_type": "system_one_decision", "indication": "chronic_kidney_disease", "status": "EXPERIMENTAL", "history": []}
+  ]
+}
