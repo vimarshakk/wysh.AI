@@ -15,4 +15,5 @@ __all__ = [
     "validation_engine",
     "reviewer_panel",
     "risk_register",
+    "validation_harness",
 ]
