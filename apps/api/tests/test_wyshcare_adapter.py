@@ -100,16 +100,22 @@ def test_adapter_rejects_non_success_or_authorizing_response():
                 "clinical_use_authorized": True,
             }
 
-    with pytest.raises(WyshCareBridgeError, match="typed validation"):
-        WyshCareBridgeClient(
-            lambda **_: Response()
-        ).request_clinical_draft(_request())
+    with pytest.raises(
+        WyshCareBridgeError,
+        match="typed validation",
+    ):
+        WyshCareBridgeClient(lambda **_: Response()).request_clinical_draft(
+            _request()
+        )
 
 
 def test_adapter_rejects_non_synthetic_request_before_transport():
     request = _request()
     object.__setattr__(request, "synthetic", False)
-    with pytest.raises(WyshCareBridgeError, match="synthetic requests only"):
+    with pytest.raises(
+        WyshCareBridgeError,
+        match="synthetic requests only",
+    ):
         WyshCareBridgeClient(
             lambda **_: pytest.fail("transport must not be called")
         ).request_clinical_draft(request)
