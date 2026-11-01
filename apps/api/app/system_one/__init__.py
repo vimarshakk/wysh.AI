@@ -16,4 +16,8 @@ __all__ = [
     "reviewer_panel",
     "risk_register",
     "validation_harness",
+    "drift_monitor",
+    "surveillance_dashboard",
+    "adverse_event_reporting",
+    "retraining_pipeline",
 ]
