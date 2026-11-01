@@ -12,4 +12,7 @@ __all__ = [
     "decision_heads",
     "rlcd",
     "training_pipeline",
+    "validation_engine",
+    "reviewer_panel",
+    "risk_register",
 ]
