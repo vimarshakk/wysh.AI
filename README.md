@@ -8,6 +8,7 @@ Standalone, safety-first clinical intelligence service for WyshCare. **Preclinic
 [![Pydantic](https://img.shields.io/badge/Pydantic-2.8-orange.svg)](https://docs.pydantic.dev/)
 [![Tests](https://img.shields.io/badge/tests-185%20passing-brightgreen.svg)](apps/api/tests/)
 [![Objective Gate](https://img.shields.io/badge/objective_gate-PASS_WITH_BOUNDARIES-blue.svg)](apps/api/scripts/run_objective_gate.py)
+[![CI](https://img.shields.io/github/actions/workflow/status/vimarshakk/wysh.AI/.github/workflows/ci.yml?branch=master)](.github/workflows/ci.yml)
 
 wysh.AI is a standalone clinical intelligence scaffold that runs synthetic patient snapshots through governed decision gates. It evaluates typed clinical facts, enforces deny-by-default inference, and emits structured routing decisions — no autonomous diagnosis, no prescribing, no EHR writes.
 
