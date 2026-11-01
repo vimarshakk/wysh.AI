@@ -22,3 +22,5 @@ artifacts/
 !artifacts/r1-test-evidence/*.json
 !artifacts/r2-test-evidence/
 !artifacts/r2-test-evidence/*.json
+!artifacts/r4-test-evidence/
+!artifacts/r4-test-evidence/*.json
