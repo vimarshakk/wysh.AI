@@ -1,0 +1,142 @@
+{
+  "schema_version": "system-one-validation-harness-v1",
+  "dataset_id": "wysh.synthetic.validation.v1",
+  "dataset_version": "1.0.0",
+  "results": {
+    "diabetes": {
+      "report_id": "validation-wysh.synthetic.diabetes.review.v1-diabetes",
+      "model_id": "wysh.synthetic.diabetes.review.v1",
+      "indication": "diabetes",
+      "n_cases": 24,
+      "n_abstained": 0,
+      "n_human_handoff": 0,
+      "abstention_rate": 1.0,
+      "human_handoff_rate": 0.0,
+      "noul_auroc": 0.5,
+      "noul_auprc": 0.9218786299527463,
+      "noul_brier_score": 0.041666666666666664,
+      "noul_ece": 0.04166666666666663,
+      "choice_accuracy": null,
+      "clinical_use_authorized": false,
+      "synthetic_only": true,
+      "provenance_hash": "26a84b6d794861338578b593172dfda9ced928af30d124f6da1c0a1acec3787c",
+      "validation_timestamp": "2026-11-01T18:23:23.364948Z",
+      "subgroup_slices": [
+        {
+          "dimension": "language",
+          "value": "en",
+          "n_cases": 24,
+          "noul_auroc": 0.5,
+          "choice_accuracy": null,
+          "abstention_rate": 1.0
+        },
+        {
+          "dimension": "age_band",
+          "value": "45-64",
+          "n_cases": 24,
+          "noul_auroc": 0.5,
+          "choice_accuracy": null,
+          "abstention_rate": 1.0
+        },
+        {
+          "dimension": "sex",
+          "value": "M",
+          "n_cases": 24,
+          "noul_auroc": 0.5,
+          "choice_accuracy": null,
+          "abstention_rate": 1.0
+        }
+      ]
+    },
+    "hypertension": {
+      "report_id": "validation-wysh.synthetic.hypertension.review.v1-hypertension",
+      "model_id": "wysh.synthetic.hypertension.review.v1",
+      "indication": "hypertension",
+      "n_cases": 24,
+      "n_abstained": 0,
+      "n_human_handoff": 0,
+      "abstention_rate": 1.0,
+      "human_handoff_rate": 0.0,
+      "noul_auroc": 0.5,
+      "noul_auprc": 0.9218786299527463,
+      "noul_brier_score": 0.041666666666666664,
+      "noul_ece": 0.04166666666666663,
+      "choice_accuracy": null,
+      "clinical_use_authorized": false,
+      "synthetic_only": true,
+      "provenance_hash": "5e1a562783adb07bf09b48da0e9e2ed4caa67173c1b2635f3443d0c12a6104d4",
+      "validation_timestamp": "2026-11-01T18:23:23.374282Z",
+      "subgroup_slices": [
+        {
+          "dimension": "language",
+          "value": "en",
+          "n_cases": 24,
+          "noul_auroc": 0.5,
+          "choice_accuracy": null,
+          "abstention_rate": 1.0
+        },
+        {
+          "dimension": "age_band",
+          "value": "45-64",
+          "n_cases": 24,
+          "noul_auroc": 0.5,
+          "choice_accuracy": null,
+          "abstention_rate": 1.0
+        },
+        {
+          "dimension": "sex",
+          "value": "M",
+          "n_cases": 24,
+          "noul_auroc": 0.5,
+          "choice_accuracy": null,
+          "abstention_rate": 1.0
+        }
+      ]
+    },
+    "chronic_kidney_disease": {
+      "report_id": "validation-wysh.synthetic.ckd.review.v1-chronic_kidney_disease",
+      "model_id": "wysh.synthetic.ckd.review.v1",
+      "indication": "chronic_kidney_disease",
+      "n_cases": 24,
+      "n_abstained": 0,
+      "n_human_handoff": 0,
+      "abstention_rate": 1.0,
+      "human_handoff_rate": 0.0,
+      "noul_auroc": 0.5,
+      "noul_auprc": 0.9218786299527463,
+      "noul_brier_score": 0.041666666666666664,
+      "noul_ece": 0.04166666666666663,
+      "choice_accuracy": null,
+      "clinical_use_authorized": false,
+      "synthetic_only": true,
+      "provenance_hash": "f3a272c8864d0646089daa05bf44fc3c6ad28e766219db9d896a9ceea5e0bbbd",
+      "validation_timestamp": "2026-11-01T18:23:23.382771Z",
+      "subgroup_slices": [
+        {
+          "dimension": "language",
+          "value": "en",
+          "n_cases": 24,
+          "noul_auroc": 0.5,
+          "choice_accuracy": null,
+          "abstention_rate": 1.0
+        },
+        {
+          "dimension": "age_band",
+          "value": "45-64",
+          "n_cases": 24,
+          "noul_auroc": 0.5,
+          "choice_accuracy": null,
+          "abstention_rate": 1.0
+        },
+        {
+          "dimension": "sex",
+          "value": "M",
+          "n_cases": 24,
+          "noul_auroc": 0.5,
+          "choice_accuracy": null,
+          "abstention_rate": 1.0
+        }
+      ]
+    }
+  }
+}
