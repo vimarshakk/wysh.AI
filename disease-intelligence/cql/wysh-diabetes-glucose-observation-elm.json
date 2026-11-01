@@ -1,0 +1,20 @@
+{
+  "library": {
+    "identifier": {"id": "wysh.diabetes.rules", "version": "1.0.0"},
+    "schemaIdentifier": {"id": "urn:hl7-org:elm", "version": "r1"},
+    "usings": {"def": [{"localIdentifier": "FHIR", "uri": "http://hl7.org/fhir", "version": "4.0.1"}]},
+    "statements": {
+      "def": [
+        {
+          "name": "HasGlucoseObservation",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "expression": {
+            "type": "Exists",
+            "operand": {"type": "Retrieve", "dataType": "FHIR.Observation"}
+          }
+        }
+      ]
+    }
+  }
+}

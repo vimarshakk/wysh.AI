@@ -1,0 +1,28 @@
+{
+  "schema_version": "clinical-evidence-registry-v1",
+  "entries": [
+    {
+      "evidence_id": "ada-soc-2026-hypoglycemia",
+      "disease_id": "diabetes",
+      "publisher": "American Diabetes Association",
+      "title": "Glycemic Goals, Hypoglycemia, and Hyperglycemic Crises: Standards of Care in Diabetes—2026",
+      "version": "2026",
+      "publication_date": "2025-12-01",
+      "review_date": "2026-10-24",
+      "source_url": "https://diabetesjournals.org/care/article/49/Supplement_1/S132/163927/6-Glycemic-Goals-Hypoglycemia-and-Hyperglycemic",
+      "license_status": "Public bibliographic metadata and link recorded; article text not copied",
+      "applicable_population": "People with diabetes; rule boundary is limited to supplied glucose observations",
+      "clinical_setting": "Synthetic longitudinal monitoring engineering",
+      "jurisdiction": "International reference; local applicability requires clinical review",
+      "required_observations": ["glucose"],
+      "terminology": ["glucose:mg/dL", "glucose:mmol/L"],
+      "contraindications_exclusions": ["No diagnosis inference", "No treatment or emergency instruction", "No execution for real patients"],
+      "evidence_quality": "Guideline reference; engineering metadata only",
+      "limitations": ["A glucose observation alone does not establish cause, severity context, or treatment need.", "The engineering rule does not replace clinical assessment or emergency services.", "No qualified clinical reviewer is recorded in this repository."],
+      "approval_status": "ENGINEERING_ONLY",
+      "clinical_reviewer": null,
+      "review_expires_at": null,
+      "content_copied": false
+    }
+  ]
+}

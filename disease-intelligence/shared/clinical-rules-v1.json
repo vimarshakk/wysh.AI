@@ -1,0 +1,12 @@
+{
+  "schema_version": "wdi-rules-v1",
+  "clinical_use_authorized": false,
+  "rules": [
+    {"id":"diabetes.required-hba1c","disease_id":"diabetes","type":"required_measurement","metric":"hba1c","label":"HbA1c measurement completeness","severity":"REVIEW"},
+    {"id":"diabetes.required-glucose","disease_id":"diabetes","type":"required_measurement","metric":"glucose","label":"Glucose measurement completeness","severity":"REVIEW"},
+    {"id":"hypertension.required-bp","disease_id":"hypertension","type":"required_measurement_group","metrics":["bp_systolic","bp_diastolic"],"label":"Blood pressure pair completeness","severity":"REVIEW"},
+    {"id":"hypertension.required-renal","disease_id":"hypertension","type":"required_measurement","metric":"renal_function","label":"Renal measurement completeness","severity":"REVIEW"},
+    {"id":"chronic-kidney-disease.required-egfr","disease_id":"chronic-kidney-disease","type":"required_measurement","metric":"egfr","label":"eGFR measurement completeness","severity":"REVIEW"},
+    {"id":"chronic-kidney-disease.required-albumin","disease_id":"chronic-kidney-disease","type":"required_measurement","metric":"urine_albumin","label":"Urine albumin measurement completeness","severity":"REVIEW"}
+  ]
+}

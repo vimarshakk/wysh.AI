@@ -1,0 +1,17 @@
+{
+  "tenant_id": "synthetic-imaging-tenant",
+  "patient_id": "synthetic-imaging-patient",
+  "synthetic": true,
+  "application_profile": "research",
+  "task": "report_draft",
+  "study": {
+    "study_id": "synthetic-xray-study-001",
+    "image_id": "synthetic-xray-image-001",
+    "modality": "XR",
+    "content_type": "image/dicom",
+    "content_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "width": 2048,
+    "height": 2048,
+    "synthetic": true
+  }
+}

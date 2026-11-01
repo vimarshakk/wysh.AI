@@ -1,0 +1,1447 @@
+{
+  "schema_version": "wdi-phase1-scenarios-v1",
+  "synthetic_only": true,
+  "as_of": "2026-10-24T00:00:00+00:00",
+  "cases": [
+    {
+      "case_id": "diabetes-01",
+      "disease_id": "diabetes",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "a1-1",
+          "metric": "hba1c",
+          "value": 7.1,
+          "unit": "%",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "g-1",
+          "metric": "glucose",
+          "value": 128.0,
+          "unit": "mg/dL",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "diabetes-02",
+      "disease_id": "diabetes",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "a1-2",
+          "metric": "hba1c",
+          "value": 7.1,
+          "unit": "%",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "g-2",
+          "metric": "glucose",
+          "value": 128.0,
+          "unit": "mg/dL",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "diabetes-03",
+      "disease_id": "diabetes",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "a1-3",
+          "metric": "hba1c",
+          "value": 7.1,
+          "unit": "%",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "g-3",
+          "metric": "glucose",
+          "value": 6.0,
+          "unit": "mmol/L",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "diabetes-04",
+      "disease_id": "diabetes",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "a1-4",
+          "metric": "hba1c",
+          "value": 7.1,
+          "unit": "%",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "diabetes-05",
+      "disease_id": "diabetes",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "a1-5",
+          "metric": "hba1c",
+          "value": 7.1,
+          "unit": "%",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "g-5",
+          "metric": "glucose",
+          "value": 128.0,
+          "unit": "mg/dL",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "r-5",
+          "metric": "egfr",
+          "value": 62.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "diabetes-06",
+      "disease_id": "diabetes",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "a1-6",
+          "metric": "hba1c",
+          "value": 7.1,
+          "unit": "%",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "g-6",
+          "metric": "glucose",
+          "value": 6.0,
+          "unit": "mmol/L",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "diabetes-07",
+      "disease_id": "diabetes",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "a1-7",
+          "metric": "hba1c",
+          "value": 7.1,
+          "unit": "%",
+          "observed_at": "2025-01-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "g-7",
+          "metric": "glucose",
+          "value": 128.0,
+          "unit": "mg/dL",
+          "observed_at": "2025-01-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "diabetes-08",
+      "disease_id": "diabetes",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "a1-8",
+          "metric": "hba1c",
+          "value": 7.1,
+          "unit": "%",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "diabetes-09",
+      "disease_id": "diabetes",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "a1-9",
+          "metric": "hba1c",
+          "value": 7.1,
+          "unit": "%",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "g-9",
+          "metric": "glucose",
+          "value": 6.0,
+          "unit": "mmol/L",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "diabetes-10",
+      "disease_id": "diabetes",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "a1-10",
+          "metric": "hba1c",
+          "value": 7.1,
+          "unit": "%",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "g-10",
+          "metric": "glucose",
+          "value": 128.0,
+          "unit": "mg/dL",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "r-10",
+          "metric": "egfr",
+          "value": 62.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "diabetes-11",
+      "disease_id": "diabetes",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "a1-11",
+          "metric": "hba1c",
+          "value": 7.1,
+          "unit": "%",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "g-11",
+          "metric": "glucose",
+          "value": 128.0,
+          "unit": "mg/dL",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "med-11",
+          "metric": "medication_review",
+          "value": 1.0,
+          "unit": "record",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "diabetes-12",
+      "disease_id": "diabetes",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "a1-12",
+          "metric": "hba1c",
+          "value": 7.1,
+          "unit": "%",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "diabetes-13",
+      "disease_id": "diabetes",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "a1-13",
+          "metric": "hba1c",
+          "value": 7.1,
+          "unit": "%",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "g-13",
+          "metric": "glucose",
+          "value": 128.0,
+          "unit": "mg/dL",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "diabetes-14",
+      "disease_id": "diabetes",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "a1-14",
+          "metric": "hba1c",
+          "value": 7.1,
+          "unit": "%",
+          "observed_at": "2025-01-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "g-14",
+          "metric": "glucose",
+          "value": 128.0,
+          "unit": "mg/dL",
+          "observed_at": "2025-01-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "diabetes-15",
+      "disease_id": "diabetes",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "a1-15",
+          "metric": "hba1c",
+          "value": 7.1,
+          "unit": "%",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "g-15",
+          "metric": "glucose",
+          "value": 6.0,
+          "unit": "mmol/L",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "r-15",
+          "metric": "egfr",
+          "value": 62.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "diabetes-16",
+      "disease_id": "diabetes",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "a1-16",
+          "metric": "hba1c",
+          "value": 7.1,
+          "unit": "%",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "diabetes-17",
+      "disease_id": "diabetes",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "a1-17",
+          "metric": "hba1c",
+          "value": 7.1,
+          "unit": "%",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "g-17",
+          "metric": "glucose",
+          "value": 128.0,
+          "unit": "mg/dL",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "diabetes-18",
+      "disease_id": "diabetes",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "a1-18",
+          "metric": "hba1c",
+          "value": 7.1,
+          "unit": "%",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "g-18",
+          "metric": "glucose",
+          "value": 6.0,
+          "unit": "mmol/L",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "diabetes-19",
+      "disease_id": "diabetes",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "a1-19",
+          "metric": "hba1c",
+          "value": 7.1,
+          "unit": "%",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "g-19",
+          "metric": "glucose",
+          "value": 128.0,
+          "unit": "mg/dL",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "diabetes-20",
+      "disease_id": "diabetes",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "a1-20",
+          "metric": "hba1c",
+          "value": 7.1,
+          "unit": "%",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "r-20",
+          "metric": "egfr",
+          "value": 62.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "hypertension-01",
+      "disease_id": "hypertension",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "s-1",
+          "metric": "bp_systolic",
+          "value": 138.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "d-1",
+          "metric": "bp_diastolic",
+          "value": 86.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "hypertension-02",
+      "disease_id": "hypertension",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "s-2",
+          "metric": "bp_systolic",
+          "value": 138.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "d-2",
+          "metric": "bp_diastolic",
+          "value": 86.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "hypertension-03",
+      "disease_id": "hypertension",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "s-3",
+          "metric": "bp_systolic",
+          "value": 138.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "d-3",
+          "metric": "bp_diastolic",
+          "value": 86.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "hypertension-04",
+      "disease_id": "hypertension",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "s-4",
+          "metric": "bp_systolic",
+          "value": 138.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "hypertension-05",
+      "disease_id": "hypertension",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "s-5",
+          "metric": "bp_systolic",
+          "value": 138.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "d-5",
+          "metric": "bp_diastolic",
+          "value": 86.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "r-5",
+          "metric": "egfr",
+          "value": 70.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "hypertension-06",
+      "disease_id": "hypertension",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "s-6",
+          "metric": "bp_systolic",
+          "value": 138.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "d-6",
+          "metric": "bp_diastolic",
+          "value": 86.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "hypertension-07",
+      "disease_id": "hypertension",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "s-7",
+          "metric": "bp_systolic",
+          "value": 138.0,
+          "unit": "mmHg",
+          "observed_at": "2025-01-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "d-7",
+          "metric": "bp_diastolic",
+          "value": 86.0,
+          "unit": "mmHg",
+          "observed_at": "2025-01-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "hypertension-08",
+      "disease_id": "hypertension",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "s-8",
+          "metric": "bp_systolic",
+          "value": 138.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "hypertension-09",
+      "disease_id": "hypertension",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "s-9",
+          "metric": "bp_systolic",
+          "value": 138.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "d-9",
+          "metric": "bp_diastolic",
+          "value": 86.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "hypertension-10",
+      "disease_id": "hypertension",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "s-10",
+          "metric": "bp_systolic",
+          "value": 138.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "d-10",
+          "metric": "bp_diastolic",
+          "value": 86.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "r-10",
+          "metric": "egfr",
+          "value": 70.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "hypertension-11",
+      "disease_id": "hypertension",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "s-11",
+          "metric": "bp_systolic",
+          "value": 138.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "d-11",
+          "metric": "bp_diastolic",
+          "value": 86.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "med-11",
+          "metric": "medication_review",
+          "value": 1.0,
+          "unit": "record",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "hypertension-12",
+      "disease_id": "hypertension",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "s-12",
+          "metric": "bp_systolic",
+          "value": 138.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "hypertension-13",
+      "disease_id": "hypertension",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "s-13",
+          "metric": "bp_systolic",
+          "value": 138.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "d-13",
+          "metric": "bp_diastolic",
+          "value": 86.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "hypertension-14",
+      "disease_id": "hypertension",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "s-14",
+          "metric": "bp_systolic",
+          "value": 138.0,
+          "unit": "mmHg",
+          "observed_at": "2025-01-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "d-14",
+          "metric": "bp_diastolic",
+          "value": 86.0,
+          "unit": "mmHg",
+          "observed_at": "2025-01-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "hypertension-15",
+      "disease_id": "hypertension",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "s-15",
+          "metric": "bp_systolic",
+          "value": 138.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "d-15",
+          "metric": "bp_diastolic",
+          "value": 86.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "r-15",
+          "metric": "egfr",
+          "value": 70.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "hypertension-16",
+      "disease_id": "hypertension",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "s-16",
+          "metric": "bp_systolic",
+          "value": 138.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "hypertension-17",
+      "disease_id": "hypertension",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "s-17",
+          "metric": "bp_systolic",
+          "value": 138.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "d-17",
+          "metric": "bp_diastolic",
+          "value": 86.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "hypertension-18",
+      "disease_id": "hypertension",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "s-18",
+          "metric": "bp_systolic",
+          "value": 138.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "d-18",
+          "metric": "bp_diastolic",
+          "value": 86.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "hypertension-19",
+      "disease_id": "hypertension",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "s-19",
+          "metric": "bp_systolic",
+          "value": 138.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "d-19",
+          "metric": "bp_diastolic",
+          "value": 86.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "hypertension-20",
+      "disease_id": "hypertension",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "s-20",
+          "metric": "bp_systolic",
+          "value": 138.0,
+          "unit": "mmHg",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "r-20",
+          "metric": "egfr",
+          "value": 70.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "chronic-kidney-disease-01",
+      "disease_id": "chronic-kidney-disease",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "e-1",
+          "metric": "egfr",
+          "value": 58.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "u-1",
+          "metric": "urine_albumin",
+          "value": 35.0,
+          "unit": "mg/g",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "chronic-kidney-disease-02",
+      "disease_id": "chronic-kidney-disease",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "e-2",
+          "metric": "egfr",
+          "value": 58.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "u-2",
+          "metric": "urine_albumin",
+          "value": 35.0,
+          "unit": "mg/g",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "chronic-kidney-disease-03",
+      "disease_id": "chronic-kidney-disease",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "e-3",
+          "metric": "egfr",
+          "value": 58.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "u-3",
+          "metric": "urine_albumin",
+          "value": 35.0,
+          "unit": "mg/g",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "chronic-kidney-disease-04",
+      "disease_id": "chronic-kidney-disease",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "e-4",
+          "metric": "egfr",
+          "value": 58.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "chronic-kidney-disease-05",
+      "disease_id": "chronic-kidney-disease",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "e-5",
+          "metric": "egfr",
+          "value": 58.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "u-5",
+          "metric": "urine_albumin",
+          "value": 35.0,
+          "unit": "mg/g",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "c-5",
+          "metric": "creatinine",
+          "value": 1.4,
+          "unit": "mg/dL",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "chronic-kidney-disease-06",
+      "disease_id": "chronic-kidney-disease",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "e-6",
+          "metric": "egfr",
+          "value": 58.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "u-6",
+          "metric": "urine_albumin",
+          "value": 35.0,
+          "unit": "mg/g",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "chronic-kidney-disease-07",
+      "disease_id": "chronic-kidney-disease",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "e-7",
+          "metric": "egfr",
+          "value": 58.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2025-01-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "u-7",
+          "metric": "urine_albumin",
+          "value": 35.0,
+          "unit": "mg/g",
+          "observed_at": "2025-01-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "chronic-kidney-disease-08",
+      "disease_id": "chronic-kidney-disease",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "e-8",
+          "metric": "egfr",
+          "value": 58.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "chronic-kidney-disease-09",
+      "disease_id": "chronic-kidney-disease",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "e-9",
+          "metric": "egfr",
+          "value": 58.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "u-9",
+          "metric": "urine_albumin",
+          "value": 35.0,
+          "unit": "mg/g",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "chronic-kidney-disease-10",
+      "disease_id": "chronic-kidney-disease",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "e-10",
+          "metric": "egfr",
+          "value": 58.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "u-10",
+          "metric": "urine_albumin",
+          "value": 35.0,
+          "unit": "mg/g",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "c-10",
+          "metric": "creatinine",
+          "value": 1.4,
+          "unit": "mg/dL",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "chronic-kidney-disease-11",
+      "disease_id": "chronic-kidney-disease",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "e-11",
+          "metric": "egfr",
+          "value": 58.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "u-11",
+          "metric": "urine_albumin",
+          "value": 35.0,
+          "unit": "mg/g",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "med-11",
+          "metric": "medication_review",
+          "value": 1.0,
+          "unit": "record",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "chronic-kidney-disease-12",
+      "disease_id": "chronic-kidney-disease",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "e-12",
+          "metric": "egfr",
+          "value": 58.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "chronic-kidney-disease-13",
+      "disease_id": "chronic-kidney-disease",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "e-13",
+          "metric": "egfr",
+          "value": 58.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "u-13",
+          "metric": "urine_albumin",
+          "value": 35.0,
+          "unit": "mg/g",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "chronic-kidney-disease-14",
+      "disease_id": "chronic-kidney-disease",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "e-14",
+          "metric": "egfr",
+          "value": 58.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2025-01-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "u-14",
+          "metric": "urine_albumin",
+          "value": 35.0,
+          "unit": "mg/g",
+          "observed_at": "2025-01-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "chronic-kidney-disease-15",
+      "disease_id": "chronic-kidney-disease",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "e-15",
+          "metric": "egfr",
+          "value": 58.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "u-15",
+          "metric": "urine_albumin",
+          "value": 35.0,
+          "unit": "mg/g",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "c-15",
+          "metric": "creatinine",
+          "value": 1.4,
+          "unit": "mg/dL",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "chronic-kidney-disease-16",
+      "disease_id": "chronic-kidney-disease",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "e-16",
+          "metric": "egfr",
+          "value": 58.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case_id": "chronic-kidney-disease-17",
+      "disease_id": "chronic-kidney-disease",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "e-17",
+          "metric": "egfr",
+          "value": 58.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "u-17",
+          "metric": "urine_albumin",
+          "value": 35.0,
+          "unit": "mg/g",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "chronic-kidney-disease-18",
+      "disease_id": "chronic-kidney-disease",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "e-18",
+          "metric": "egfr",
+          "value": 58.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "u-18",
+          "metric": "urine_albumin",
+          "value": 35.0,
+          "unit": "mg/g",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "chronic-kidney-disease-19",
+      "disease_id": "chronic-kidney-disease",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "e-19",
+          "metric": "egfr",
+          "value": 58.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "u-19",
+          "metric": "urine_albumin",
+          "value": 35.0,
+          "unit": "mg/g",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "NO_GAP_DETECTED"
+    },
+    {
+      "case_id": "chronic-kidney-disease-20",
+      "disease_id": "chronic-kidney-disease",
+      "synthetic": true,
+      "measurements": [
+        {
+          "measurement_id": "e-20",
+          "metric": "egfr",
+          "value": 58.0,
+          "unit": "mL/min/1.73m2",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        },
+        {
+          "measurement_id": "c-20",
+          "metric": "creatinine",
+          "value": 1.4,
+          "unit": "mg/dL",
+          "observed_at": "2026-10-01T00:00:00Z",
+          "source_type": "laboratory"
+        }
+      ],
+      "expected_engineering_status": "REVIEW_REQUIRED"
+    }
+  ]
+}

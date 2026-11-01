@@ -1,0 +1,41 @@
+{
+  "resourceType": "Bundle",
+  "id": "synthetic-bundle-r2-001",
+  "type": "collection",
+  "meta": {"tag": [{"system": "https://wysh.ai/tags", "code": "synthetic", "display": "Synthetic fixture"}]},
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:synthetic-patient-r2-001",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "synthetic-patient-r2-001",
+        "identifier": [{"system": "https://wysh.ai/synthetic", "value": "synthetic-patient-r2-001"}],
+        "name": [{"family": "Fixture", "given": ["Synthetic"]}],
+        "gender": "unknown"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:synthetic-encounter-r2-001",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "synthetic-encounter-r2-001",
+        "status": "finished",
+        "class": {"code": "AMB"},
+        "subject": {"reference": "Patient/synthetic-patient-r2-001"},
+        "period": {"start": "2026-01-01T00:00:00Z", "end": "2026-01-01T00:30:00Z"}
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:synthetic-observation-r2-001",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "synthetic-observation-r2-001",
+        "status": "final",
+        "code": {"coding": [{"system": "http://loinc.org", "code": "29463-7", "display": "Body weight"}]},
+        "subject": {"reference": "Patient/synthetic-patient-r2-001"},
+        "effectiveDateTime": "2026-01-01T00:10:00Z",
+        "valueQuantity": {"value": 70, "unit": "kg", "system": "http://unitsofmeasure.org", "code": "kg"}
+      }
+    }
+  ]
+}

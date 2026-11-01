@@ -1,0 +1,28 @@
+{
+  "schema_version": "wdi-20-v1",
+  "catalog_name": "WyshCare Disease Intelligence 20",
+  "clinical_use_authorized": false,
+  "prevalence_policy": "Population estimates are research metadata only and are not used as runtime thresholds or clinical claims.",
+  "conditions": [
+    {"id":"diabetes","name":"Type 2 diabetes / diabetes","priority":1,"phase":1,"population_scope":"adult and pediatric definitions require separate validation","tracking_domains":["glucose","hba1c","renal_function","medication_safety","retinal_screening","foot_screening"]},
+    {"id":"prediabetes","name":"Prediabetes","priority":2,"phase":1,"population_scope":"adult definition requires source-specific validation","tracking_domains":["glucose","hba1c","weight","waist","activity"]},
+    {"id":"hypertension","name":"Hypertension","priority":3,"phase":1,"population_scope":"adult definition requires source-specific validation","tracking_domains":["bp_systolic","bp_diastolic","renal_function","medication_adherence"]},
+    {"id":"dyslipidemia","name":"Dyslipidemia","priority":4,"phase":1,"population_scope":"tested subsample estimates are not general-population prevalence","tracking_domains":["ldl","total_cholesterol","triglycerides","medication_adherence"]},
+    {"id":"obesity","name":"Obesity","priority":5,"phase":1,"population_scope":"adult thresholds and measurement method require validation","tracking_domains":["weight","bmi","waist","activity","metabolic_markers"]},
+    {"id":"chronic-kidney-disease","name":"Chronic kidney disease","priority":6,"phase":1,"population_scope":"community-study estimates require source-specific validation","tracking_domains":["egfr","urine_albumin","creatinine","bp","medication_safety"]},
+    {"id":"anemia","name":"Anemia","priority":7,"phase":2,"population_scope":"women 15-49 and other populations require separate definitions","tracking_domains":["hemoglobin","iron_studies","symptoms","follow_up"]},
+    {"id":"fatty-liver-disease","name":"Fatty liver disease / MASLD","priority":8,"phase":2,"population_scope":"average-risk study definitions require validation","tracking_domains":["liver_enzymes","metabolic_markers","imaging","fibrosis_assessment"]},
+    {"id":"copd","name":"COPD","priority":9,"phase":2,"population_scope":"adult pooled-study estimate requires validation","tracking_domains":["spirometry","symptoms","exacerbations","inhaler_adherence"]},
+    {"id":"hypothyroidism","name":"Hypothyroidism","priority":10,"phase":2,"population_scope":"reported estimate has limited generalizability","tracking_domains":["tsh","free_t4","symptoms","medication_adherence"]},
+    {"id":"coronary-artery-disease","name":"Coronary artery disease","priority":11,"phase":2,"population_scope":"national estimate pending verification","tracking_domains":["symptoms","lipids","medications","events"]},
+    {"id":"heart-failure","name":"Heart failure","priority":12,"phase":2,"population_scope":"national estimate pending verification","tracking_domains":["weight","symptoms","fluid_status","medications"]},
+    {"id":"stroke","name":"Stroke / post-stroke disability","priority":13,"phase":2,"population_scope":"national estimate pending verification","tracking_domains":["function","rehabilitation","medications","events"]},
+    {"id":"asthma","name":"Asthma","priority":14,"phase":2,"population_scope":"national estimate pending verification","tracking_domains":["symptoms","peak_flow","inhalers","exacerbations"]},
+    {"id":"depression","name":"Depression","priority":15,"phase":2,"population_scope":"screening and diagnosis definitions require validation","tracking_domains":["symptoms","function","treatment_response","safety_check"]},
+    {"id":"anxiety","name":"Anxiety disorders","priority":16,"phase":3,"population_scope":"screening and diagnosis definitions require validation","tracking_domains":["symptoms","function","treatment_response","safety_check"]},
+    {"id":"osteoarthritis","name":"Osteoarthritis","priority":17,"phase":3,"population_scope":"national estimate pending verification","tracking_domains":["pain","mobility","function","activity"]},
+    {"id":"pcos","name":"Polycystic ovary syndrome","priority":18,"phase":3,"population_scope":"diagnostic definitions and population estimates require validation","tracking_domains":["cycles","metabolic_markers","symptoms","medications"]},
+    {"id":"childhood-undernutrition","name":"Childhood undernutrition / stunting","priority":19,"phase":2,"population_scope":"under-five growth definitions require age-specific validation","tracking_domains":["height","weight","growth_velocity","nutrition"]},
+    {"id":"tuberculosis","name":"Tuberculosis","priority":20,"phase":2,"population_scope":"incidence is not prevalence; local program definitions required","tracking_domains":["treatment_adherence","symptoms","laboratory_follow_up","events"]}
+  ]
+}

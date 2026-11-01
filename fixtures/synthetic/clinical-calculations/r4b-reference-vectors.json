@@ -1,0 +1,9 @@
+{
+  "schema_version": "r4b-reference-vectors-v1",
+  "synthetic_only": true,
+  "vectors": [
+    {"id": "diabetes-eag-7", "disease_id": "diabetes", "inputs": {"hba1c_percent": 7.0}, "expected": {"code": "A1C_TO_EAG", "value": 154.2, "unit": "mg/dL"}},
+    {"id": "hypertension-pulse-pressure", "disease_id": "hypertension", "inputs": {"pairs_mmhg": [[120, 80], [130, 85]]}, "expected": {"code": "MEAN_PULSE_PRESSURE", "value": 42.5, "unit": "mmHg"}},
+    {"id": "ckd-epi-2021-male-60", "disease_id": "chronic-kidney-disease", "inputs": {"age_years": 60, "sex": "male", "creatinine_mg_dl": 1.0}, "expected": {"code": "EGFR_CKD_EPI_2021", "value": 86.163, "unit": "mL/min/1.73 m²", "tolerance": 0.002}}
+  ]
+}

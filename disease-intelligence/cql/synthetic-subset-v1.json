@@ -1,0 +1,12 @@
+{
+  "library_id": "wysh.synthetic.rules.v1",
+  "runtime": "wysh-bounded-evaluator-v1",
+  "status": "SYNTHETIC_SUBSET_ONLY",
+  "clinical_use_authorized": false,
+  "expressions": [
+    {"id": "count-facts", "purpose": "count supplied synthetic facts"},
+    {"id": "mean-numeric", "purpose": "mean supplied numeric facts"},
+    {"id": "has-glucose", "purpose": "check presence of glucose metric facts"}
+  ],
+  "prohibited": ["diagnosis", "risk-classification", "treatment", "prescription", "referral", "record-write", "arbitrary-code"]
+}
