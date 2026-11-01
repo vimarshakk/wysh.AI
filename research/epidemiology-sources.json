@@ -1,0 +1,28 @@
+{
+  "schema_version": "wdi-20-epidemiology-register-v1",
+  "status": "UNVERIFIED_RESEARCH_REGISTER",
+  "runtime_use": false,
+  "source_policy": "Use primary public-health, registry, or peer-reviewed sources; record definition, year, denominator, uncertainty, and reuse terms.",
+  "conditions": [
+    {"wdi_id":"WDI-01","disease":"diabetes","india_source":"PENDING_PRIMARY_SOURCE_REVIEW","global_source":"PENDING_PRIMARY_SOURCE_REVIEW"},
+    {"wdi_id":"WDI-02","disease":"hypertension","india_source":"PENDING_PRIMARY_SOURCE_REVIEW","global_source":"PENDING_PRIMARY_SOURCE_REVIEW"},
+    {"wdi_id":"WDI-03","disease":"chronic-kidney-disease","india_source":"PENDING_PRIMARY_SOURCE_REVIEW","global_source":"PENDING_PRIMARY_SOURCE_REVIEW"},
+    {"wdi_id":"WDI-04","disease":"coronary-artery-disease","india_source":"PENDING_PRIMARY_SOURCE_REVIEW","global_source":"PENDING_PRIMARY_SOURCE_REVIEW"},
+    {"wdi_id":"WDI-05","disease":"stroke","india_source":"PENDING_PRIMARY_SOURCE_REVIEW","global_source":"PENDING_PRIMARY_SOURCE_REVIEW"},
+    {"wdi_id":"WDI-06","disease":"heart-failure","india_source":"PENDING_PRIMARY_SOURCE_REVIEW","global_source":"PENDING_PRIMARY_SOURCE_REVIEW"},
+    {"wdi_id":"WDI-07","disease":"diabetes-complications","india_source":"PENDING_PRIMARY_SOURCE_REVIEW","global_source":"PENDING_PRIMARY_SOURCE_REVIEW"},
+    {"wdi_id":"WDI-08","disease":"copd","india_source":"PENDING_PRIMARY_SOURCE_REVIEW","global_source":"PENDING_PRIMARY_SOURCE_REVIEW"},
+    {"wdi_id":"WDI-09","disease":"asthma","india_source":"PENDING_PRIMARY_SOURCE_REVIEW","global_source":"PENDING_PRIMARY_SOURCE_REVIEW"},
+    {"wdi_id":"WDI-10","disease":"mental-health","india_source":"PENDING_PRIMARY_SOURCE_REVIEW","global_source":"PENDING_PRIMARY_SOURCE_REVIEW"},
+    {"wdi_id":"WDI-11","disease":"cancer","india_source":"PENDING_PRIMARY_SOURCE_REVIEW","global_source":"PENDING_PRIMARY_SOURCE_REVIEW"},
+    {"wdi_id":"WDI-12","disease":"acute-kidney-injury","india_source":"PENDING_PRIMARY_SOURCE_REVIEW","global_source":"PENDING_PRIMARY_SOURCE_REVIEW"},
+    {"wdi_id":"WDI-13","disease":"tuberculosis","india_source":"PENDING_PRIMARY_SOURCE_REVIEW","global_source":"PENDING_PRIMARY_SOURCE_REVIEW"},
+    {"wdi_id":"WDI-14","disease":"malaria","india_source":"PENDING_PRIMARY_SOURCE_REVIEW","global_source":"PENDING_PRIMARY_SOURCE_REVIEW"},
+    {"wdi_id":"WDI-15","disease":"dengue","india_source":"PENDING_PRIMARY_SOURCE_REVIEW","global_source":"PENDING_PRIMARY_SOURCE_REVIEW"},
+    {"wdi_id":"WDI-16","disease":"hiv","india_source":"PENDING_PRIMARY_SOURCE_REVIEW","global_source":"PENDING_PRIMARY_SOURCE_REVIEW"},
+    {"wdi_id":"WDI-17","disease":"anemia","india_source":"PENDING_PRIMARY_SOURCE_REVIEW","global_source":"PENDING_PRIMARY_SOURCE_REVIEW"},
+    {"wdi_id":"WDI-18","disease":"obesity","india_source":"PENDING_PRIMARY_SOURCE_REVIEW","global_source":"PENDING_PRIMARY_SOURCE_REVIEW"},
+    {"wdi_id":"WDI-19","disease":"osteoporosis","india_source":"PENDING_PRIMARY_SOURCE_REVIEW","global_source":"PENDING_PRIMARY_SOURCE_REVIEW"},
+    {"wdi_id":"WDI-20","disease":"childhood-undernutrition","india_source":"PENDING_PRIMARY_SOURCE_REVIEW","global_source":"PENDING_PRIMARY_SOURCE_REVIEW"}
+  ]
+}

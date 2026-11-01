@@ -1,0 +1,21 @@
+wdi_id,disease,burden_score,care_gap_score,data_readiness_score,workflow_readiness_score,engineering_priority,score_status,rationale
+WDI-01,diabetes,5,5,4,5,19,PROVISIONAL,high longitudinal value and Phase-1 workflow exists
+WDI-02,hypertension,5,5,4,5,19,PROVISIONAL,high longitudinal value and Phase-1 workflow exists
+WDI-03,chronic-kidney-disease,4,5,3,4,16,PROVISIONAL,high safety value but definitions need review
+WDI-04,coronary-artery-disease,5,4,2,2,13,PROVISIONAL,high burden but workflow and evidence integration pending
+WDI-05,stroke,4,5,3,3,15,PROVISIONAL,disability burden and rehabilitation opportunity
+WDI-06,heart-failure,4,5,3,3,15,PROVISIONAL,monitoring opportunity with escalation sensitivity
+WDI-07,diabetes-complications,4,5,2,2,13,PROVISIONAL,requires complication-specific definitions
+WDI-08,copd,4,4,3,2,13,PROVISIONAL,home monitoring potential; validation pending
+WDI-09,asthma,4,4,3,2,13,PROVISIONAL,home monitoring potential; validation pending
+WDI-10,mental-health,5,5,2,2,14,PROVISIONAL,safety-sensitive and definition-sensitive
+WDI-11,cancer,5,4,2,2,13,PROVISIONAL,large burden; imaging and oncology scope broad
+WDI-12,acute-kidney-injury,3,4,3,2,12,PROVISIONAL,high acuity; requires hospital data validation
+WDI-13,tuberculosis,4,5,3,3,15,PROVISIONAL,India-specific program and adherence relevance
+WDI-14,malaria,3,4,2,2,11,PROVISIONAL,seasonal and surveillance-oriented
+WDI-15,dengue,3,4,2,2,11,PROVISIONAL,seasonal and warning-sign workflow potential
+WDI-16,hiv,4,4,2,2,12,PROVISIONAL,longitudinal adherence and privacy sensitivity
+WDI-17,anemia,4,5,3,3,15,PROVISIONAL,high India relevance and laboratory workflow opportunity
+WDI-18,obesity,5,4,4,4,17,PROVISIONAL,common chronic risk factor and Phase-1 workflow exists
+WDI-19,osteoporosis,3,4,2,2,11,PROVISIONAL,aging and fracture-prevention relevance
+WDI-20,childhood-undernutrition,4,5,3,2,14,PROVISIONAL,high child-health relevance; age-specific review required

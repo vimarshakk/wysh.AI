@@ -1,0 +1,34 @@
+{
+  "schema_version": "external-evidence-catalog-v1",
+  "purpose": "research and governance map; no restricted data downloaded",
+  "entries": [
+    {
+      "name": "PhysioNet MIMIC-IV",
+      "role": "critical-care and longitudinal research benchmark",
+      "access": "credentialed access, training, and signed data-use agreement required",
+      "llm_boundary": "do not send restricted data to third-party APIs; local processing only unless the data-use terms explicitly permit otherwise",
+      "source": "https://www.physionet.org/content/mimiciv/"
+    },
+    {
+      "name": "OHDSI OMOP Common Data Model",
+      "role": "observational data harmonization and phenotype portability reference",
+      "access": "standards and tooling review required; no source or data copied into wysh.AI",
+      "source": "https://www.ohdsi.org/web/wiki/documentation%3Acdm%3Acommon_data_model"
+    },
+    {
+      "name": "WHO AI health governance",
+      "role": "ethics, human-rights, safety, and governance reference",
+      "access": "public guidance; attribution and license review required for reuse",
+      "source": "https://www.who.int/publications/b/58847"
+    },
+    {
+      "name": "ICMR National Ethical Guidelines",
+      "role": "Indian biomedical and health research ethics reference",
+      "access": "guidance reference; qualified ethics review remains mandatory",
+      "source": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/ICMR_Ethical_Guidelines_2017.pdf"
+    }
+  ],
+  "status": "REFERENCE_ONLY",
+  "clinical_validation": "NO-GO",
+  "production": "NO-GO"
+}
