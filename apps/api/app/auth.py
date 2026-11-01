@@ -170,8 +170,10 @@ def verify_bearer_token(
 def make_test_token(secret: str, *, issuer: str, audience: str, tenant_id: str, patient_ids: list[str], scopes: list[str], roles: list[str] | None = None, subject: str = "test-gateway", ttl_seconds: int = 300, purpose_of_use: str | None = None, consent_id: str | None = None, delegated_by: str | None = None) -> str:
     """Test-only token helper; never use this issuer in production."""
     now = int(time.time())  # noqa
-def encode(value):
-    return base64.urlsafe_b64encode(json.dumps(value, separators=(",", ":")).encode()).rstrip(b"=").decode()
+
+    def encode(value: object) -> str:
+        return base64.urlsafe_b64encode(json.dumps(value, separators=(",", ":")).encode()).rstrip(b"=").decode()
+
     header = encode({"alg": "HS256", "typ": "JWT"})
     claims = {"iss": issuer, "aud": audience, "sub": subject, "iat": now, "exp": now + ttl_seconds, "tenant_id": tenant_id, "patient_ids": patient_ids, "scope": scopes, "roles": roles or []}  # noqa
     if purpose_of_use is not None:  # noqa

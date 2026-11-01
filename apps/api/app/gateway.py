@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import time
 from dataclasses import replace
-, TypeVar  # noqa
+from typing import Any, TypeVar  # noqa
 
 from pydantic import BaseModel
 
