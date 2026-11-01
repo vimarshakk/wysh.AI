@@ -16,7 +16,6 @@ graphify-out/
 !.env.example
 *.pyc
 models/
-datasets/
 artifacts/
 !artifacts/r1-test-evidence/
 !artifacts/r1-test-evidence/*.json

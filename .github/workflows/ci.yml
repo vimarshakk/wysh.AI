@@ -19,17 +19,29 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install dependencies
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Python dependencies
         run: |
           cd apps/api
           python -m venv .venv
           source .venv/bin/activate
           pip install -e '.[dev]'
-      - name: Run tests
+      - name: Install Node.js dependencies
+        run: |
+          cd apps/cql-runtime
+          npm install
+      - name: Run Python tests
         run: |
           cd apps/api
           source .venv/bin/activate
           pytest -q
+      - name: Run Node.js tests
+        run: |
+          cd apps/cql-runtime
+          npm test
       - name: Run objective gate
         run: |
           cd apps/api
@@ -56,3 +68,7 @@ jobs:
           source .venv/bin/activate
           pip install flake8
           python -m flake8 app/ tests/ scripts/
+      - name: Lint JavaScript
+        run: |
+          cd apps/cql-runtime
+          npx eslint --no-error-on-unmatched-pattern src/ test/ || true
