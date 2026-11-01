@@ -1,0 +1,11 @@
+{
+  "suite": "synthetic-clinical-snapshot-e2e",
+  "status": "PASS",
+  "checks": {
+    "snapshot_created": true,
+    "decision_created": true,
+    "decision_abstained_when_inference_disabled": true,
+    "evidence_provenance_preserved": true,
+    "synthetic_only": true
+  }
+}

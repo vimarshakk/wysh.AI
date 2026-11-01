@@ -1,0 +1,28 @@
+{
+  "suite": "synthetic-nondiagnostic-r1",
+  "status": "PASS",
+  "case_count": 3,
+  "results": [
+    {
+      "case_id": "routing-routine",
+      "passed": true,
+      "abstained": false,
+      "selected_option": "routine",
+      "failure": null
+    },
+    {
+      "case_id": "routing-review",
+      "passed": true,
+      "abstained": false,
+      "selected_option": "review",
+      "failure": null
+    },
+    {
+      "case_id": "insufficient-evidence",
+      "passed": true,
+      "abstained": true,
+      "selected_option": null,
+      "failure": null
+    }
+  ]
+}

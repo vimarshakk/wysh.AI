@@ -1,0 +1,434 @@
+{
+  "suite": "synthetic-phase1-evaluation",
+  "status": "PASS",
+  "cases": 60,
+  "cases_per_disease": {
+    "diabetes": 20,
+    "hypertension": 20,
+    "chronic-kidney-disease": 20
+  },
+  "outcomes": [
+    {
+      "case_id": "diabetes-01",
+      "disease_id": "diabetes",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "6f8d2ed19275cd042f4121b8a4784ab84104e93346c9d6149f3f8d32fdec6c21"
+    },
+    {
+      "case_id": "diabetes-02",
+      "disease_id": "diabetes",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "14b91c99ab8bfd01ccda9bf1ce0030a11a5b6d736a082a7885fac6faf6c88a6b"
+    },
+    {
+      "case_id": "diabetes-03",
+      "disease_id": "diabetes",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "c613b0bb0681f3a244fbd6ef3ca5d1d3302c7ff940219586231452f436c04372"
+    },
+    {
+      "case_id": "diabetes-04",
+      "disease_id": "diabetes",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "4caa08b9646f216372a9f689a180469f66ab5f634cbfd1d73fc31106b139a0f0"
+    },
+    {
+      "case_id": "diabetes-05",
+      "disease_id": "diabetes",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "44f91f8a0273082d5874e2c1b3e79d5513e11c252e0716ee7654f5f82a5049c4"
+    },
+    {
+      "case_id": "diabetes-06",
+      "disease_id": "diabetes",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "5848ff164592b5e2f8ff79cd8555c3fe648d51bcd0c05328473b3091a5c43661"
+    },
+    {
+      "case_id": "diabetes-07",
+      "disease_id": "diabetes",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "6453e1e2348c9f80c53b78cb420da68af032cb08f276bfb574d0345933ab56ab"
+    },
+    {
+      "case_id": "diabetes-08",
+      "disease_id": "diabetes",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "c2530bd95af553b68661353fca9a2db104a4e3dee8ae3495d4b20242f736589c"
+    },
+    {
+      "case_id": "diabetes-09",
+      "disease_id": "diabetes",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "2f864fba1d3fdc022d3bd811e402217632740de0aeb48d96c149acdf1cb92eb0"
+    },
+    {
+      "case_id": "diabetes-10",
+      "disease_id": "diabetes",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "0a102bcf9be78abb9c47e69b3a0fbae51efd0610d6ee8b8ac2b3d80afd961e34"
+    },
+    {
+      "case_id": "diabetes-11",
+      "disease_id": "diabetes",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "030cc56d719b247db0d34db3846ebd9ed0b097bce41f2b8c03f48634b172c7ab"
+    },
+    {
+      "case_id": "diabetes-12",
+      "disease_id": "diabetes",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "c78ab2c7d95f66edfe274f18b24a3b33e70bbb8c2616fbd8f990c81a2d1e274e"
+    },
+    {
+      "case_id": "diabetes-13",
+      "disease_id": "diabetes",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "7f5df945ea9368d29c0f96e844856d96fe1c83c5c29614b9d4bef0f525f9fc2b"
+    },
+    {
+      "case_id": "diabetes-14",
+      "disease_id": "diabetes",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "5223f5751ba0267effc994b6dd7cdeabc52c7961efbd17c9c18ad00e746cc70d"
+    },
+    {
+      "case_id": "diabetes-15",
+      "disease_id": "diabetes",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "3dcadd8dcbc96ececce330b0938475d0406b4a4f79dddf0e6ea09720a9801ffc"
+    },
+    {
+      "case_id": "diabetes-16",
+      "disease_id": "diabetes",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "deda51f2e67521cce5866b233c972f4527325e24fc6b208442756cfdeb1c25d2"
+    },
+    {
+      "case_id": "diabetes-17",
+      "disease_id": "diabetes",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "44c5fc68390848edb63666ce6d02f604c5cf3b63e81e82dc528801fb48f0f992"
+    },
+    {
+      "case_id": "diabetes-18",
+      "disease_id": "diabetes",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "f58cf9c57b13b0be6d4182f35510d5b8afd2dcc8b7def7f8f4e4926f86dca317"
+    },
+    {
+      "case_id": "diabetes-19",
+      "disease_id": "diabetes",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "d80420e7ea21a423cf5bb0fba0a4178e96a99ab3a1151be018255b8ef702ff84"
+    },
+    {
+      "case_id": "diabetes-20",
+      "disease_id": "diabetes",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "72817bbc93e2580a79104a108feae1c8c2e1a889d0b65910e2a5503bb6b5c7db"
+    },
+    {
+      "case_id": "hypertension-01",
+      "disease_id": "hypertension",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "09729477d0b29ec557827385dcf90a5b59f3ab3bd3be0b9a8055a7b3c025d6aa"
+    },
+    {
+      "case_id": "hypertension-02",
+      "disease_id": "hypertension",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "655a8928d426fee16a5a80e9a6aaaba008ae7b465be1bd00d60a3b2723781236"
+    },
+    {
+      "case_id": "hypertension-03",
+      "disease_id": "hypertension",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "90d0a860a7e021f2bb3620e68cdb998095247f93298b4b53af6079236b2f8ff6"
+    },
+    {
+      "case_id": "hypertension-04",
+      "disease_id": "hypertension",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "6a4edf58c2525353d9d3a5346cd1e4416f6671acb5279549353a9a7bdc533ba9"
+    },
+    {
+      "case_id": "hypertension-05",
+      "disease_id": "hypertension",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "c6437e81457992ef4b96ba64d602d9587d868d775f413d5df1dcbd0884b1a6a0"
+    },
+    {
+      "case_id": "hypertension-06",
+      "disease_id": "hypertension",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "3430a52a767762529cc3e358d34ff3811c6e0bc8f5b0d72aabff68883844d6db"
+    },
+    {
+      "case_id": "hypertension-07",
+      "disease_id": "hypertension",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "0ea51e5462e8a65e64735886b5e6d3fdd99df3847627bc09f0e7e57a565d8eb1"
+    },
+    {
+      "case_id": "hypertension-08",
+      "disease_id": "hypertension",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "1972f6a4aa8ea7e4f939535563e4fc0593e94f7efc06a2edcc84abca3685736d"
+    },
+    {
+      "case_id": "hypertension-09",
+      "disease_id": "hypertension",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "5e4f750553b54b402e46c295741190922887601c86ad9ae233bb6cad901c8699"
+    },
+    {
+      "case_id": "hypertension-10",
+      "disease_id": "hypertension",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "dd5ec574b2f48be39ad7cb68da5ab26556a308ffa8e9cc6abc831c832d4b4ab6"
+    },
+    {
+      "case_id": "hypertension-11",
+      "disease_id": "hypertension",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "26c58023c800bc4a59aaaa0f419825b0c5fb9dbadd0caa6663366e9393429a49"
+    },
+    {
+      "case_id": "hypertension-12",
+      "disease_id": "hypertension",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "643223661af564dbdc5ed70645269acec78bd2e2dc0e5010e510b1a0783e6963"
+    },
+    {
+      "case_id": "hypertension-13",
+      "disease_id": "hypertension",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "1c03c89c05bbab58d89998b2c44a521fbffa483b88887456840dff2c67b8e26f"
+    },
+    {
+      "case_id": "hypertension-14",
+      "disease_id": "hypertension",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "e621a96bf3d178363068c49ece0a0d1416d0571dd6739876ecc834d93d2ba79d"
+    },
+    {
+      "case_id": "hypertension-15",
+      "disease_id": "hypertension",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "3b999546e51470e62329f4991412e5cb877d2430a7713c69b850498d08a17a60"
+    },
+    {
+      "case_id": "hypertension-16",
+      "disease_id": "hypertension",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "473072bbd70b3b3014a5608e2790bbd158cfa1bce58b366075661f3f6ccf56d5"
+    },
+    {
+      "case_id": "hypertension-17",
+      "disease_id": "hypertension",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "eb382c096af06559aab127796624a8e371bbbc4e8a6b851bd89b26107bef10fc"
+    },
+    {
+      "case_id": "hypertension-18",
+      "disease_id": "hypertension",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "b572373ef4b2bacff183f57c896e28de409657c1203e8e3de71335870a9c8b57"
+    },
+    {
+      "case_id": "hypertension-19",
+      "disease_id": "hypertension",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "6fc66df92ecf016b592c6eeb0cf4a4b39d9bbd655e555c78f3c2ebee6c39eb92"
+    },
+    {
+      "case_id": "hypertension-20",
+      "disease_id": "hypertension",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "5a9d50da78c129b95533504e56387fd6750864827c5222cfed99cc0bbdc49992"
+    },
+    {
+      "case_id": "chronic-kidney-disease-01",
+      "disease_id": "chronic-kidney-disease",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "f26ea2bd7a83a44e8af134bd7cdd533f7944db16fd104155b37ab1faa697409f"
+    },
+    {
+      "case_id": "chronic-kidney-disease-02",
+      "disease_id": "chronic-kidney-disease",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "edb6813d8b1949bbb1820336cfb24fe35122d345c6a9f8f47d497779d4f6cda5"
+    },
+    {
+      "case_id": "chronic-kidney-disease-03",
+      "disease_id": "chronic-kidney-disease",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "aefe7820ab32c80c7f88d0dd2ebd76cd3c9389b4f05397912e23c4f16d0adead"
+    },
+    {
+      "case_id": "chronic-kidney-disease-04",
+      "disease_id": "chronic-kidney-disease",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "22814cf2826a85b67022e2b9160991a52ef3b7378e7333240ba02ac30887150c"
+    },
+    {
+      "case_id": "chronic-kidney-disease-05",
+      "disease_id": "chronic-kidney-disease",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "5d965248a2eb32bc44f6976c98c37ae4a0f2870aaae780ea3ac7eda92bbc8c6e"
+    },
+    {
+      "case_id": "chronic-kidney-disease-06",
+      "disease_id": "chronic-kidney-disease",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "a47ec1a3eeef05ae3ad6176c290874e7c73b23e789758da5f23519d7889fee13"
+    },
+    {
+      "case_id": "chronic-kidney-disease-07",
+      "disease_id": "chronic-kidney-disease",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "75a5e86d204b290aeecd49c0ba95e8682633bd731307efd4ed6e452f99a42a9f"
+    },
+    {
+      "case_id": "chronic-kidney-disease-08",
+      "disease_id": "chronic-kidney-disease",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "1491831844055febb6199ef11d903fcea8b2233c04e255ce030ac310a04a39fb"
+    },
+    {
+      "case_id": "chronic-kidney-disease-09",
+      "disease_id": "chronic-kidney-disease",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "ccb07635fe9cbaf3738e675ba9283629bdcc231eef581d3ee1561e090778706a"
+    },
+    {
+      "case_id": "chronic-kidney-disease-10",
+      "disease_id": "chronic-kidney-disease",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "cc4ff9aeceb33066617293fbdc201128b86a3f7fcc6093d4b8f15083394a4594"
+    },
+    {
+      "case_id": "chronic-kidney-disease-11",
+      "disease_id": "chronic-kidney-disease",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "a19029e0ae0b284583e426466546903cae2c077ec97b7bbe3978a11ceab7b875"
+    },
+    {
+      "case_id": "chronic-kidney-disease-12",
+      "disease_id": "chronic-kidney-disease",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "b43bdfaa3cf7bda92651c4ee4e00781da1553d386b89a1277d34db7baeaf2d30"
+    },
+    {
+      "case_id": "chronic-kidney-disease-13",
+      "disease_id": "chronic-kidney-disease",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "564d30917a2e9b56e5c193ad6ac09c4caac25f1efda38594489d78c9bba76f97"
+    },
+    {
+      "case_id": "chronic-kidney-disease-14",
+      "disease_id": "chronic-kidney-disease",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "8d6c76c6371b4ef62ffb1829fbf97c621cf5c68fd7ee7b3fd39c5decb32caa91"
+    },
+    {
+      "case_id": "chronic-kidney-disease-15",
+      "disease_id": "chronic-kidney-disease",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "cd69a2b37c76cb60549add16344963d7faa3fddd6e87928e83ef93a25d2d08fc"
+    },
+    {
+      "case_id": "chronic-kidney-disease-16",
+      "disease_id": "chronic-kidney-disease",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "535b0264c31f454c332727ff702e1359d3cbe70a25454b3d48f3355daf8fbb69"
+    },
+    {
+      "case_id": "chronic-kidney-disease-17",
+      "disease_id": "chronic-kidney-disease",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "130ee8c479ca95dc91d5c454610780e36bfd1e598df0637812e58169a257ebf5"
+    },
+    {
+      "case_id": "chronic-kidney-disease-18",
+      "disease_id": "chronic-kidney-disease",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "78086924e60306f15b80d8e689d4bdfda2a0679d14a03a1a92e626ebb387ecb0"
+    },
+    {
+      "case_id": "chronic-kidney-disease-19",
+      "disease_id": "chronic-kidney-disease",
+      "status": "NO_GAP_DETECTED",
+      "abstained": false,
+      "provenance_hash": "03973224dce7d122d7fe231213e61e57e7a6e79f407c1d5b0b87018077a14d00"
+    },
+    {
+      "case_id": "chronic-kidney-disease-20",
+      "disease_id": "chronic-kidney-disease",
+      "status": "REVIEW_REQUIRED",
+      "abstained": false,
+      "provenance_hash": "bc94282b5486ead05567b84f3fa51cc929944afa4ecf559cd0c33d14ccb2463a"
+    }
+  ],
+  "synthetic_only": true,
+  "clinical_validation": false
+}

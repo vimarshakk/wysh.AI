@@ -1,0 +1,30 @@
+{
+  "suite": "synthetic-adversarial-safety-r1",
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "missing evidence abstains",
+      "passed": true
+    },
+    {
+      "check": "diagnostic question rejected",
+      "passed": true
+    },
+    {
+      "check": "real tenant rejected",
+      "passed": true
+    },
+    {
+      "check": "production decision disabled",
+      "passed": true
+    },
+    {
+      "check": "invalid option abstains",
+      "passed": true
+    },
+    {
+      "check": "cloud fallback denied by default",
+      "passed": true
+    }
+  ]
+}

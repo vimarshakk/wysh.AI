@@ -1,0 +1,14 @@
+{
+  "suite": "synthetic-medgemma-decision-e2e",
+  "status": "PASS",
+  "model_id": "medgemma:latest",
+  "abstained": false,
+  "checks": {
+    "http_success": true,
+    "real_model_id": true,
+    "schema_provenance": true,
+    "human_review_required": true,
+    "clinical_use_disabled": true,
+    "synthetic_only": true
+  }
+}

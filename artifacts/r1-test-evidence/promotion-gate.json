@@ -1,0 +1,17 @@
+{
+  "suite": "model-promotion-gate-r1",
+  "status": "PASS",
+  "runtime_enabled_ids": [],
+  "checks": [
+    {
+      "check": "all runtime IDs are registered",
+      "passed": true,
+      "offending_ids": []
+    },
+    {
+      "check": "all runtime IDs are manifest-enabled",
+      "passed": true,
+      "offending_ids": []
+    }
+  ]
+}

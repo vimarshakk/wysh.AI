@@ -1,0 +1,19 @@
+{
+  "suite": "wdi-20-program-scaffold-gate",
+  "status": "IN_PROGRESS",
+  "checks": {
+    "catalog_has_20_conditions": true,
+    "candidate_register_has_at_least_40_rows": true,
+    "matrix_has_20_rows": true,
+    "matrix_matches_catalog": true,
+    "required_artifacts_present": true,
+    "runtime_claims_not_promoted": true
+  },
+  "catalog_conditions": 20,
+  "candidate_resources": 48,
+  "matrix_rows": 20,
+  "clinical_validation_complete": false,
+  "training_pipeline_complete": false,
+  "external_connectivity_verified": false,
+  "note": "Structural program scaffold only; not a clinical or release gate."
+}

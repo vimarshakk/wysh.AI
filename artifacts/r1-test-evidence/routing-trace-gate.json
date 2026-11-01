@@ -1,0 +1,28 @@
+{
+  "schema_version": "routing-trace-gate-v1",
+  "suite": "synthetic-local-first-routing-trace",
+  "status": "PASS",
+  "synthetic_only": true,
+  "route_attempts": [
+    {
+      "provider": "medgemma",
+      "model": "medgemma:latest",
+      "status": "failure",
+      "reason": "http_error",
+      "latency_ms": 18
+    },
+    {
+      "provider": "openai-compatible",
+      "model": "synthetic-openai-v1",
+      "status": "success",
+      "reason": null,
+      "latency_ms": 1
+    }
+  ],
+  "selected_provider": "openai-compatible",
+  "selected_model": "synthetic-openai-v1",
+  "schema_validated": true,
+  "metrics_redacted": true,
+  "clinical_use_authorized": false,
+  "production": "NO-GO"
+}

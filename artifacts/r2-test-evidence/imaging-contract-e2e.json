@@ -1,0 +1,13 @@
+{
+  "suite": "synthetic-imaging-contract-e2e",
+  "status": "PASS",
+  "checks": {
+    "synthetic_fixture": true,
+    "metadata_only": true,
+    "contract_response": true,
+    "fail_closed": true,
+    "human_review_required": true,
+    "clinical_use_disabled": true
+  },
+  "synthetic_only": true
+}

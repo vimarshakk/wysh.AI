@@ -1,0 +1,22 @@
+{
+  "suite": "security-isolation-r1",
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "production snapshot inference disabled",
+      "status": "PASS"
+    },
+    {
+      "check": "production decision inference disabled",
+      "status": "PASS"
+    },
+    {
+      "check": "real patient snapshot rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "real tenant decision rejected",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "suite": "r2-provenance-gate",
+  "status": "PASS",
+  "checks": {
+    "synthetic_fhir_bundle": true,
+    "evaluation_manifest_is_synthetic": true,
+    "decision_contract_response": true,
+    "input_hash_is_deterministic": true,
+    "input_hash_changes_with_evidence": true,
+    "response_provenance_preserves_evidence_count": true,
+    "response_provenance_has_hash": true,
+    "audit_does_not_contain_raw_subject_ids": true
+  },
+  "synthetic_only": true
+}

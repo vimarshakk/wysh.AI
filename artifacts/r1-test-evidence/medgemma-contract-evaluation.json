@@ -1,0 +1,26 @@
+{
+  "suite": "synthetic-medgemma-contract-evaluation",
+  "status": "PASS",
+  "model_id": "medgemma:latest",
+  "clinical_accuracy_claim": false,
+  "results": [
+    {
+      "case_id": "routine-intake",
+      "passed": true,
+      "http_status": 200,
+      "model_id": "medgemma:latest",
+      "selected_option": "routine",
+      "abstained": false,
+      "confidence_exposed": false
+    },
+    {
+      "case_id": "human-review-routing",
+      "passed": true,
+      "http_status": 200,
+      "model_id": "medgemma:latest",
+      "selected_option": "routine",
+      "abstained": false,
+      "confidence_exposed": false
+    }
+  ]
+}

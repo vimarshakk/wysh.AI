@@ -1,0 +1,26 @@
+{
+  "suite": "open-source-governance-gate",
+  "status": "PASS_WITH_REVIEW_ITEMS",
+  "checks": {
+    "adapter_only_policy": true,
+    "no_third_party_code_copied": true,
+    "no_model_weights_copied": true,
+    "unique_project_ids": true,
+    "source_urls_are_https": true,
+    "unverified_projects_not_promoted": true,
+    "blocked_projects_reference_only": true
+  },
+  "review_items": [
+    "monai",
+    "ohif-ai",
+    "radvision-ai",
+    "medrax",
+    "nightscout-cgm-remote-monitor",
+    "bahmni",
+    "ahrq-cds-connect-cql-services",
+    "openemr",
+    "openmrs"
+  ],
+  "third_party_code_copied": false,
+  "model_weights_copied": false
+}

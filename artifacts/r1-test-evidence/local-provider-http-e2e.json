@@ -1,0 +1,34 @@
+{
+  "suite": "synthetic-local-provider-http-e2e",
+  "synthetic_only": true,
+  "status": "PASS",
+  "evidence": [
+    {
+      "integration": "gemini",
+      "status": "PASS_LOCAL_EMULATOR",
+      "model_id": "gemini-2.5-flash",
+      "schema_validated": true,
+      "selected_option": "routine"
+    },
+    {
+      "integration": "medgemma",
+      "status": "PASS_LOCAL_EMULATOR",
+      "model_id": "medgemma:4b",
+      "schema_validated": true,
+      "selected_option": "routine"
+    },
+    {
+      "integration": "openai-compatible",
+      "status": "PASS_LOCAL_EMULATOR",
+      "model_id": "local-medgemma",
+      "schema_validated": true,
+      "selected_option": "routine"
+    },
+    {
+      "integration": "trion",
+      "status": "PASS_LOCAL_EMULATOR",
+      "response_schema": 1,
+      "generated_by": "TRION"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "suite": "wysh-ai-r1-release-checks",
+  "status": "PASS_WITH_BLOCKED_REAL_INTEGRATIONS",
+  "blocked_integrations": [
+    "gemini",
+    "openai-compatible",
+    "trion"
+  ],
+  "failed_integrations": [],
+  "checks": [
+    {
+      "check": "unit-contract-tests",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "check": "compile-check",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "check": "synthetic-evaluation",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "check": "adversarial-safety-evaluation",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "check": "security-isolation-gate",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "check": "clinical-snapshot-e2e",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "check": "local-provider-http-e2e",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "check": "model-promotion-gate",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "check": "real-provider-smoke",
+      "status": "PASS",
+      "exit_code": 0
+    }
+  ]
+}

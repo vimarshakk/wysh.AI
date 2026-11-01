@@ -1,0 +1,20 @@
+{
+  "suite": "clinical-console-local-smoke",
+  "status": "PASS",
+  "url": "http://127.0.0.1:3000/",
+  "api_url": "http://127.0.0.1:8000",
+  "checks": {
+    "next_page_http_200": true,
+    "api_health_available": true,
+    "synthetic_patient_index_loaded": true,
+    "synthetic_patient_count": 60,
+    "diabetes_timeline_rendered": true,
+    "backend_assessment_rendered": true,
+    "provenance_rendered": true,
+    "clinical_use_disabled_visible": true,
+    "review_persistence_not_claimed": true
+  },
+  "synthetic_only": true,
+  "clinical_validation": false,
+  "production_deployment": false
+}

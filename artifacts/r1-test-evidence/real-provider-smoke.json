@@ -1,0 +1,32 @@
+{
+  "synthetic_only": true,
+  "evidence": [
+    {
+      "integration": "gemini",
+      "status": "BLOCKED",
+      "model_id": "gemini-2.5-flash",
+      "error": "invalid_credentials",
+      "latency_ms": 0
+    },
+    {
+      "integration": "medgemma",
+      "status": "PASS",
+      "model_id": "medgemma:latest",
+      "latency_ms": 6592,
+      "schema_validated": true
+    },
+    {
+      "integration": "openai-compatible",
+      "status": "BLOCKED",
+      "model_id": "unconfigured",
+      "error": "endpoint_unavailable_or_unconfigured"
+    },
+    {
+      "integration": "trion",
+      "status": "BLOCKED",
+      "model_id": "unconfigured",
+      "error": "endpoint_unavailable_or_unconfigured",
+      "latency_ms": 0
+    }
+  ]
+}

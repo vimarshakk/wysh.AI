@@ -1,0 +1,14 @@
+{
+  "suite": "synthetic-wdi20-e2e",
+  "status": "PASS",
+  "checks": {
+    "wdi20_catalog": true,
+    "phase1_workflows": true,
+    "monitoring_response": true,
+    "descriptive_trend": true,
+    "evidence_refs_preserved": true,
+    "clinical_use_disabled": true,
+    "deterministic_rules": true
+  },
+  "synthetic_only": true
+}
