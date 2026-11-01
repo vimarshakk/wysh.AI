@@ -1,4 +1,4 @@
-# wysh.AI — WMI-1
+# wysh.AI 
 
 Standalone, safety-first clinical intelligence service for WyshCare. **Preclinical engineering — not approved for patient care.**
 
