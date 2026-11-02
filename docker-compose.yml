@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  wysh-ai-api:
+    build:
+      context: apps/api
+      dockerfile: Dockerfile
+    container_name: wysh-ai-api
+    ports:
+      - "8000:8000"
+    environment:
+      - WMI_ENV=development
+      - WMI_INFERENCE_ENABLED=false
+      - WMI_REQUIRE_GATEWAY_AUTH=false
+      - MODEL_ROUTING_ORDER=medgemma
+      - MODEL_ENABLED_IDS=
+      - SEED_DEMO=true
+    volumes:
+      - ./apps/api:/app
+      - wysh-ai-data:/app/data
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    restart: unless-stopped
+
+volumes:
+  wysh-ai-data:
